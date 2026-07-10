@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study in Turkey — Al Azim Consulting</title>
+<meta name="description" content="Official representative of universities in Turkey. Free application, no exams, scholarships up to 80%.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="img/logo.png" alt="Al Azim Consulting">
+      <div class="bt"><b>AL AZIM</b><small>CONSULTING</small></div></a>
+    <div class="menu">
+      <nav>
+        <a href="index.html" class="active" data-i18n="nav_home">Home</a>
+        <a href="about.html"  data-i18n="nav_about">About</a>
+        <a href="universities.html"  data-i18n="nav_uni">Universities</a>
+        
+        <a href="gundem.html"  data-i18n="nav_news">News</a>
+        <a href="contact.html"  data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="lang">
+        <button data-l="en">EN</button><button data-l="tr">TR</button>
+        <button data-l="tk">TK</button><button data-l="ru">RU</button>
+      </div>
+      <a class="btn btn-gold" href="contact.html" data-i18n="apply">Apply Now</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="overlay" id="ov"></div>
+<div class="mobnav" id="mob">
+  <a href="index.html" data-i18n="nav_home">Home</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+  <a href="universities.html" data-i18n="nav_uni">Universities</a>
+  <a href="programs.html" data-i18n="nav_prog">Programs</a>
+  <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
+  <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+  <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
+  <a href="gundem.html" data-i18n="nav_news">News</a>
+  <a href="contact.html" data-i18n="nav_contact">Contact</a>
+  <div class="lang">
+    <button data-l="en">EN</button><button data-l="tr">TR</button>
+    <button data-l="tk">TK</button><button data-l="ru">RU</button>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="stars" id="stars"></div>
+  <canvas id="globe"></canvas>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Al Azim Consulting</span>
+    <h1><span data-i18n="hero_t1">Your Gateway to</span><br><span class="gold" data-i18n="hero_t2">Education</span> <span data-i18n="hero_t3">in Turkey</span></h1>
+    <p class="lead" data-i18n="hero_lead">Official representative of universities in Turkey. Free application, no entrance exams, scholarships up to 80% — from application to enrollment, we guide every step.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="contact.html" data-i18n="apply">Apply Now</a>
+      <a class="btn btn-ghost" href="universities.html" data-i18n="hero_btn2">Explore Universities</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap"><div class="grid">
+    <div class="stat"><div class="num gold" data-count="1500" data-suf="+">0</div><div class="lab" data-i18n="st_students">Students Placed</div></div>
+    <div class="stat"><div class="num gold" data-count="34" data-suf="+">0</div><div class="lab" data-i18n="st_uni">Partner Universities</div></div>
+    <div class="stat"><div class="num gold" data-count="99" data-suf="%">0</div><div class="lab" data-i18n="st_rate">First-Choice Approval</div></div>
+    <div class="stat"><div class="num gold" data-count="12" data-suf="+">0</div><div class="lab" data-i18n="st_countries">Countries Served</div></div>
+  </div></div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow center" data-i18n="svc_eyebrow">What We Offer</span>
+      <h2 data-i18n="svc_title">Our Services</h2>
+      <p data-i18n="svc_sub">End-to-end support for your education and life in Turkey.</p>
+    </div>
+    <div class="grid4">
+      <div class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 6 4 12 0v-5"/></svg></div><h3 data-i18n="s1_t">Education</h3><p data-i18n="s1_d">We help you choose the right university and program — from application to enrollment.</p></div>
+      <div class="card rv" data-d="1"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 10h5M14 14h5"/></svg></div><h3 data-i18n="s2_t">Residence Permit</h3><p data-i18n="s2_d">Full assistance with every procedure for your residence permit in Turkey.</p></div>
+      <div class="card rv" data-d="2"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div><h3 data-i18n="s3_t">Work Permit</h3><p data-i18n="s3_d">Guidance through the work permit process to build your career in Turkey.</p></div>
+      <div class="card rv" data-d="3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7a4 4 0 0 0 6 0zM17 7l-3 7a4 4 0 0 0 6 0z"/></svg></div><h3 data-i18n="s4_t">Legal Services</h3><p data-i18n="s4_d">Reliable, transparent support for all of your legal needs in Turkey.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="uni-strip">
+  <div class="lab" data-i18n="uni_lab">Partner Universities in Turkey</div>
+  <div class="marquee" id="mq"></div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow center" data-i18n="pr_eyebrow">Simple & Transparent</span>
+      <h2 data-i18n="pr_title">How It Works</h2>
+    </div>
+    <div class="grid4">
+      <div class="card rv"><div class="n">01</div><h3 data-i18n="p1_t">Apply Free</h3><p data-i18n="p1_d">Fill out one free form and choose your programs — no entrance exams, based on your GPA.</p></div>
+      <div class="card rv" data-d="1"><div class="n">02</div><h3 data-i18n="p2_t">Get Offers</h3><p data-i18n="p2_d">Receive offer letters from universities within 24 hours, with special discounts.</p></div>
+      <div class="card rv" data-d="2"><div class="n">03</div><h3 data-i18n="p3_t">Enroll</h3><p data-i18n="p3_d">Secure your seat, complete registration and receive your official acceptance letter.</p></div>
+      <div class="card rv" data-d="3"><div class="n">04</div><h3 data-i18n="p4_t">Settle In</h3><p data-i18n="p4_d">We handle your residence permit and help you settle into life in Turkey.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow center" data-i18n="sch_eyebrow">Scholarships</span>
+      <h2 data-i18n="sch_title">Scholarships up to 80%</h2>
+      <p data-i18n="sch_sub">Thanks to special agreements with our universities, one-time-payment scholarships can reach 80%. Seats are limited each intake.</p>
+    </div>
+    <div class="grid3">
+      <div class="card rv"><h3 data-i18n="sc1_t">No Entrance Exams</h3><p data-i18n="sc1_d">Admission is based on your high school GPA — no YÖS, no SAT required at our partner universities.</p></div>
+      <div class="card rv" data-d="1"><h3 data-i18n="sc2_t">Free Application</h3><p data-i18n="sc2_d">Our services are completely free for students — we are supported by our partner universities.</p></div>
+      <div class="card rv" data-d="2"><h3 data-i18n="sc3_t">Support in Your Language</h3><p data-i18n="sc3_d">English, Turkish, Turkmen and Russian — our advisors speak your language at every step.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow center" data-i18n="ts_eyebrow">Student Voices</span><h2 data-i18n="ts_title">Our Students Are Winning</h2></div>
+    <div class="grid3">
+      <div class="card rv"><p style="font-family:'Playfair Display';font-style:italic;font-size:17px;color:var(--text)" data-i18n="t1_q">"Thank you so much for helping and supporting me in making the most important decision of my life."</p><p style="margin-top:14px;color:var(--gold);font-weight:600">Aygül M. <span style="color:var(--dim2);font-weight:400" data-i18n="t1_w">· Medicine, Istanbul</span></p></div>
+      <div class="card rv" data-d="1"><p style="font-family:'Playfair Display';font-style:italic;font-size:17px;color:var(--text)" data-i18n="t2_q">"They spoke with my family in our own language and answered every question with patience. Truly trustworthy."</p><p style="margin-top:14px;color:var(--gold);font-weight:600">Daniyar K. <span style="color:var(--dim2);font-weight:400" data-i18n="t2_w">· Engineering, Ankara</span></p></div>
+      <div class="card rv" data-d="2"><p style="font-family:'Playfair Display';font-style:italic;font-size:17px;color:var(--text)" data-i18n="t3_q">"My admission and residence permit were handled together, without stress. I feel very lucky to go this way with them."</p><p style="margin-top:14px;color:var(--gold);font-weight:600">Selbi A. <span style="color:var(--dim2);font-weight:400" data-i18n="t3_w">· Dentistry, İzmir</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:110px 28px 0">
+  <div class="cta rv">
+    <span class="eyebrow center">Al Azim Consulting</span>
+    <h2 data-i18n="cta_title">Begin your journey to Turkey</h2>
+    <p data-i18n="cta_sub">Contact us today and let's start your acceptance process at universities in Turkey — free application, no exams.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="contact.html" data-i18n="apply">Apply Now</a>
+      <a class="btn btn-ghost" href="https://wa.me/905346898493" target="_blank" data-i18n="cta_call">Talk to an Advisor</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <a href="index.html" class="brand" style="margin-bottom:18px"><img src="img/logo.png" alt="">
+          <div class="bt"><b>AL AZIM</b><small>CONSULTING</small></div></a>
+        <p data-i18n="f_about"></p>
+      </div>
+      <div class="fcol">
+        <h5 data-i18n="f_links">Quick Links</h5>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="universities.html" data-i18n="nav_uni">Universities</a>
+        <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
+        <a href="gundem.html" data-i18n="nav_news">News</a>
+        <a href="programs.html" data-i18n="nav_prog">Programs</a>
+        <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
+        <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+      </div>
+      <div class="fcol">
+        <h5 data-i18n="nav_contact">Contact</h5>
+        <a href="contact.html" data-i18n="apply">Apply Now</a>
+        <a href="https://wa.me/905346898493" target="_blank">WhatsApp</a>
+        <a href="tel:+905346898493">+90 534 689 84 93</a>
+        <a href="tel:+905441519998">+90 544 151 99 98</a>
+      </div>
+      <div class="fcol">
+        <h5 data-i18n="f_contact">Contact & Office</h5>
+        <p data-i18n="f_addr"></p>
+        <p style="margin-top:10px">info@alazim.com</p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Al Azim Consulting. <span data-i18n="f_rights">All rights reserved.</span></span>
+      <span>Istanbul, Türkiye</span>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/globe.js" defer></script>
+<script>const sk=document.getElementById("stars");for(let i=0;i<60;i++){const s=document.createElement("div");s.className="star";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*70+"%";s.style.animationDelay=Math.random()*4+"s";sk.appendChild(s);}</script>
+<script src="js/lang.js"></script>
+<script>
+window.PAGE_I18N={
+en:{ts_eyebrow:"Student Voices",ts_title:"Our Students Are Winning",t1_q:"\"Thank you so much for helping and supporting me in making the most important decision of my life.\"",t1_w:"· Medicine, Istanbul",t2_q:"\"They spoke with my family in our own language and answered every question with patience. Truly trustworthy.\"",t2_w:"· Engineering, Ankara",t3_q:"\"My admission and residence permit were handled together, without stress. I feel very lucky to go this way with them.\"",t3_w:"· Dentistry, İzmir",hero_t1:"Your Gateway to",hero_t2:"Education",hero_t3:"in Turkey",hero_lead:"Official representative of universities in Turkey. Free application, no entrance exams, scholarships up to 80% — from application to enrollment, we guide every step.",hero_btn2:"Explore Universities",
+ svc_eyebrow:"What We Offer",svc_title:"Our Services",svc_sub:"End-to-end support for your education and life in Turkey.",
+ s1_t:"Education",s1_d:"We help you choose the right university and program — from application to enrollment.",
+ s2_t:"Residence Permit",s2_d:"Full assistance with every procedure for your residence permit in Turkey.",
+ s3_t:"Work Permit",s3_d:"Guidance through the work permit process to build your career in Turkey.",
+ s4_t:"Legal Services",s4_d:"Reliable, transparent support for all of your legal needs in Turkey.",
+ pr_eyebrow:"Simple & Transparent",pr_title:"How It Works",
+ p1_t:"Apply Free",p1_d:"Fill out one free form and choose your programs — no entrance exams, based on your GPA.",
+ p2_t:"Get Offers",p2_d:"Receive offer letters from universities within 24 hours, with special discounts.",
+ p3_t:"Enroll",p3_d:"Secure your seat, complete registration and receive your official acceptance letter.",
+ p4_t:"Settle In",p4_d:"We handle your residence permit and help you settle into life in Turkey.",
+ sch_eyebrow:"Scholarships",sch_title:"Scholarships up to 80%",sch_sub:"Thanks to special agreements with our universities, one-time-payment scholarships can reach 80%. Seats are limited each intake.",
+ sc1_t:"No Entrance Exams",sc1_d:"Admission is based on your high school GPA — no YÖS, no SAT required at our partner universities.",
+ sc2_t:"Free Application",sc2_d:"Our services are completely free for students — we are supported by our partner universities.",
+ sc3_t:"Support in Your Language",sc3_d:"English, Turkish, Turkmen and Russian — our advisors speak your language at every step."},
+tr:{ts_eyebrow:"Öğrenci Sesleri",ts_title:"Öğrencilerimiz Kazanıyor",t1_q:"\"Hayatımın en önemli kararında bana yardım edip destek olduğunuz için çok teşekkür ederim.\"",t1_w:"· Tıp, İstanbul",t2_q:"\"Ailemle kendi dilimizde konuştular, her soruya sabırla yanıt verdiler. Gerçekten güvenilir.\"",t2_w:"· Mühendislik, Ankara",t3_q:"\"Kabulüm ve oturum iznim stressiz, birlikte halledildi. Onlarla bu yolda olduğum için çok şanslıyım.\"",t3_w:"· Diş Hekimliği, İzmir",hero_t1:"Türkiye'de Eğitime",hero_t2:"Açılan",hero_t3:"Kapınız",hero_lead:"Türkiye'deki üniversitelerin resmi temsilcisi. Ücretsiz başvuru, sınavsız kabul, %80'e varan burslar — başvurudan kayda kadar her adımda yanınızdayız.",hero_btn2:"Üniversiteleri Keşfet",
+ svc_eyebrow:"Sunduklarımız",svc_title:"Hizmetlerimiz",svc_sub:"Türkiye'deki eğitiminiz ve hayatınız için baştan sona destek.",
+ s1_t:"Eğitim",s1_d:"Doğru üniversite ve programı seçmenize yardımcı oluyoruz — başvurudan kayda kadar.",
+ s2_t:"Oturum İzni",s2_d:"Türkiye'de oturum izni almanın tüm aşamalarında tam destek.",
+ s3_t:"Çalışma İzni",s3_d:"Türkiye'de kariyerinizi kurmanız için çalışma izni sürecinde rehberlik.",
+ s4_t:"Hukuki Hizmetler",s4_d:"Türkiye'deki tüm hukuki ihtiyaçlarınız için güvenilir, şeffaf destek.",
+ pr_eyebrow:"Basit ve Şeffaf",pr_title:"Nasıl Çalışır?",
+ p1_t:"Ücretsiz Başvur",p1_d:"Tek bir ücretsiz form doldurun — sınavsız, not ortalamanıza göre kabul.",
+ p2_t:"Teklif Al",p2_d:"24 saat içinde üniversitelerden özel indirimli kabul mektupları alın.",
+ p3_t:"Kayıt Ol",p3_d:"Yerinizi garantileyin, kaydı tamamlayın ve resmi kabul mektubunuzu alın.",
+ p4_t:"Yerleş",p4_d:"Oturum izninizi hallediyor, Türkiye'deki hayata uyum sağlamanıza yardım ediyoruz.",
+ sch_eyebrow:"Burslar",sch_title:"%80'e Varan Burslar",sch_sub:"Üniversitelerimizle özel anlaşmalar sayesinde tek ödemeli burslar %80'e ulaşabilir. Kontenjan her dönem sınırlıdır.",
+ sc1_t:"Sınavsız Kabul",sc1_d:"Kabul lise not ortalamanıza göre — partner üniversitelerimizde YÖS veya SAT gerekmez.",
+ sc2_t:"Ücretsiz Başvuru",sc2_d:"Hizmetlerimiz öğrenciler için tamamen ücretsizdir — partner üniversitelerimiz tarafından desteklenmekteyiz.",
+ sc3_t:"Kendi Dilinizde Destek",sc3_d:"İngilizce, Türkçe, Türkmence ve Rusça — danışmanlarımız her adımda sizin dilinizi konuşur."},
+tk:{ts_eyebrow:"Talyplaryň sesi",ts_title:"Talyplarymyz ýeňýär",t1_q:"\"Durmuşymyň iň möhüm kararynda maňa kömek edeniňiz üçin köp sag boluň.\"",t1_w:"· Lukmançylyk, Stambul",t2_q:"\"Maşgalam bilen öz dilimizde gepleşdiler, her soraga sabyrlylyk bilen jogap berdiler.\"",t2_w:"· Inženerçilik, Ankara",t3_q:"\"Kabul we ýaşaýyş rugsadym stressiz, bile çözüldi. Olar bilen bu ýolda bolanyma bagtly.\"",t3_w:"· Diş lukmançylygy, Izmir",hero_t1:"Türkiýede Bilime",hero_t2:"Açylýan",hero_t3:"Gapyňyz",hero_lead:"Türkiýedäki uniwersitetleriň resmi wekili. Mugt ýüz tutma, synagsyz kabul, 80%-e çenli talyp haky — ýüz tutmadan hasaba alynmaga çenli ýanyňyzda.",hero_btn2:"Uniwersitetleri öwren",
+ svc_eyebrow:"Hödürleýänlerimiz",svc_title:"Hyzmatlarymyz",svc_sub:"Türkiýedäki bilimiňiz we durmuşyňyz üçin doly goldaw.",
+ s1_t:"Bilim",s1_d:"Dogry uniwersiteti we maksatnamany saýlamaga kömek edýäris — ýüz tutmadan hasaba çenli.",
+ s2_t:"Ýaşaýyş rugsady",s2_d:"Türkiýede ýaşaýyş rugsadyny almagyň ähli tapgyrlarynda doly goldaw.",
+ s3_t:"Iş rugsady",s3_d:"Türkiýede karýera gurmagyňyz üçin iş rugsady prosesinde ýolbaşçylyk.",
+ s4_t:"Hukuk hyzmatlary",s4_d:"Türkiýedäki ähli hukuk zerurlyklaryňyz üçin ygtybarly goldaw.",
+ pr_eyebrow:"Ýönekeý we aýdyň",pr_title:"Nähili işleýär?",
+ p1_t:"Mugt ýüz tut",p1_d:"Bir mugt forma dolduryň — synagsyz, orta bahaňyza görä kabul.",
+ p2_t:"Teklip al",p2_d:"24 sagadyň içinde uniwersitetlerden aýratyn arzanladyşly kabul hatlaryny alyň.",
+ p3_t:"Hasaba dur",p3_d:"Orunňyzy kepillendiriň, hasaba alynmagy tamamlaň we resmi kabul hatyňyzy alyň.",
+ p4_t:"Ornaş",p4_d:"Ýaşaýyş rugsadyňyzy çözýäris we Türkiýedäki durmuşa uýgunlaşmaga kömek edýäris.",
+ sch_eyebrow:"Talyp haklary",sch_title:"80%-e çenli talyp haky",sch_sub:"Uniwersitetlerimiz bilen aýratyn şertnamalar arkaly bir gezeklik töleg talyp haklary 80%-e ýetip biler. Orunlar çäkli.",
+ sc1_t:"Synagsyz kabul",sc1_d:"Kabul orta mekdep bahaňyza görä — YÖS ýa-da SAT gerek däl.",
+ sc2_t:"Mugt ýüz tutma",sc2_d:"Hyzmatlarymyz talyplar üçin doly mugt — hyzmatdaş uniwersitetlerimiz tarapyndan goldanýarys.",
+ sc3_t:"Öz diliňizde goldaw",sc3_d:"Iňlis, türk, türkmen we rus dillerinde — maslahatçylarymyz her ädimde ýanyňyzda."},
+ru:{ts_eyebrow:"Голоса студентов",ts_title:"Наши студенты побеждают",t1_q:"\"Огромное спасибо за помощь и поддержку в самом важном решении моей жизни.\"",t1_w:"· Медицина, Стамбул",t2_q:"\"Они говорили с моей семьёй на нашем языке и терпеливо отвечали на все вопросы. По-настоящему надёжно.\"",t2_w:"· Инженерия, Анкара",t3_q:"\"Зачисление и ВНЖ оформили вместе, без стресса. Мне очень повезло идти этим путём с ними.\"",t3_w:"· Стоматология, Измир",hero_t1:"Ваш путь к",hero_t2:"образованию",hero_t3:"в Турции",hero_lead:"Официальный представитель университетов Турции. Бесплатная заявка, приём без экзаменов, стипендии до 80% — сопровождаем от заявки до зачисления.",hero_btn2:"Университеты",
+ svc_eyebrow:"Что мы предлагаем",svc_title:"Наши услуги",svc_sub:"Полная поддержка вашего образования и жизни в Турции.",
+ s1_t:"Образование",s1_d:"Поможем выбрать подходящий университет и программу — от заявки до зачисления.",
+ s2_t:"Вид на жительство",s2_d:"Полное сопровождение на всех этапах получения ВНЖ в Турции.",
+ s3_t:"Разрешение на работу",s3_d:"Проведём через процесс получения разрешения на работу в Турции.",
+ s4_t:"Юридические услуги",s4_d:"Надёжная и прозрачная поддержка по всем правовым вопросам в Турции.",
+ pr_eyebrow:"Просто и прозрачно",pr_title:"Как это работает",
+ p1_t:"Бесплатная заявка",p1_d:"Заполните одну бесплатную форму — приём без экзаменов, по среднему баллу.",
+ p2_t:"Получите предложения",p2_d:"Письма о зачислении от университетов в течение 24 часов со скидками.",
+ p3_t:"Зачисление",p3_d:"Закрепите место, завершите регистрацию и получите официальное письмо о зачислении.",
+ p4_t:"Обустройство",p4_d:"Оформим вид на жительство и поможем адаптироваться к жизни в Турции.",
+ sch_eyebrow:"Стипендии",sch_title:"Стипендии до 80%",sch_sub:"Благодаря особым соглашениям с университетами стипендии при единовременной оплате достигают 80%. Количество мест ограничено.",
+ sc1_t:"Приём без экзаменов",sc1_d:"Зачисление по среднему баллу аттестата — YÖS и SAT не требуются.",
+ sc2_t:"Бесплатная заявка",sc2_d:"Наши услуги полностью бесплатны для студентов — нас поддерживают университеты-партнёры.",
+ sc3_t:"Поддержка на вашем языке",sc3_d:"Английский, турецкий, туркменский и русский — консультанты говорят на вашем языке."}
+};
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

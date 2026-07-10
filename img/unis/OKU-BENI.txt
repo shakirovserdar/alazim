@@ -1,0 +1,7 @@
+Universite fotograflarini bu klasore at. Dosya adlari TAM olarak soyle olmali (kucuk harf, .jpg):
+koc.jpg sabanci.jpg bilkent.jpg acibadem.jpg kadirhas.jpg bau.jpg medipol.jpg medipol-ankara.jpg
+biruni.jpg aydin.jpg altinbas.jpg istinye.jpg ozyegin.jpg yeditepe.jpg uskudar.jpg halic.jpg
+fenerbahce.jpg dogus.jpg nisantasi.jpg bilgi.jpg gelisim.jpg gedik.jpg kultur.jpg galata.jpg
+yeniyuzyil.jpg kent.jpg fsm.jpg bezmialem.jpg beykoz.jpg pirireis.jpg maltepe.jpg mef.jpg
+isik.jpg atilim.jpg yasar.jpg tinaztepe.jpg antalyabilim.jpg mudanya.jpg
+Not: Ideal boyut ~800x450 (16:9). Foto olmayan universitede kart fotosuz, duzgun gorunur.
