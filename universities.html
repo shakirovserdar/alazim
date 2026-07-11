@@ -168,7 +168,7 @@ function renderUnis(){
     const d=document.createElement('div');d.className='uni-card rv';d.style.opacity=1;d.style.transform='none';
     const priceLabels={en:'Tuition from',tr:'Yıllık ücret',tk:'Ýyllyk töleg',ru:'Стоимость от'};
     const priceHtml=u[3]?`<div class="price">${priceLabels[lang()]||priceLabels.en}: ${u[3]}</div>`:'';
-    d.innerHTML=`<div class="uni-img"><img src="img/unis/${u[2]}.jpg" alt="${u[0]}" loading="lazy" onerror="this.parentElement.remove()"></div>
+    d.innerHTML=`<div class="uni-img"><img src="img/unis/${u[2]}.jpg" alt="${u[0]}" loading="lazy" onerror="this.onerror=null;this.src='img/covers/city-${u[1]}.svg'"></div>
       <h3>${u[0]}</h3>
       <div class="city"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${L[u[1]]}</div>
       ${priceHtml}

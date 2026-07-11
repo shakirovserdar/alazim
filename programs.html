@@ -184,7 +184,7 @@ function renderProgs(){
   PROGS.forEach((p,i)=>{
     const paths=p.ic.split('|').map(x=>`<path d="${x}"/>`).join('');
     const d=document.createElement('div');d.className='card';
-    d.innerHTML=`<div class="uni-img"><img src="img/programs/${p.k}.jpg" alt="${T[p.k][0]}" loading="lazy" onerror="this.parentElement.remove()"></div>
+    d.innerHTML=`<div class="uni-img"><img src="img/programs/${p.k}.jpg" alt="${T[p.k][0]}" loading="lazy" onerror="this.onerror=null;this.src='img/covers/prog-${p.k}.svg'"></div>
       <div class="ic"><svg viewBox="0 0 24 24">${paths}</svg></div>
       <h3>${T[p.k][0]}</h3><p>${T[p.k][1]}</p>
       <p style="color:var(--gold);font-size:13px;margin-top:10px">${p.years} ${T.years}</p>
