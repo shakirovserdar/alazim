@@ -1,7 +1,6 @@
 /* Al Azim Consulting — shared translations (EN default) */
 window.I18N = {
-en:{
- nav_prog:"Programs",nav_why:"Why Turkey",nav_faq:"FAQ",nav_home:"Home",nav_about:"About",nav_services:"Services",nav_uni:"Universities",nav_denklik:"Equivalency",nav_news:"News",nav_contact:"Contact",
+en:{nav_team:"Our Team",nav_prog:"Programs",nav_why:"Why Turkey",nav_faq:"FAQ",nav_home:"Home",nav_about:"About",nav_services:"Services",nav_uni:"Universities",nav_denklik:"Equivalency",nav_news:"News",nav_contact:"Contact",
  apply:"Apply Now",learn:"Learn More",send_wa:"Send via WhatsApp",
  f_about:"Al Azim Consulting supports international students with university admission, residence and work permits, and legal guidance in Turkey. Official representative of universities in Turkey.",
  f_links:"Quick Links",f_contact:"Contact & Office",f_addr:"Hürriyet Mah. Mahmutbey Cad. Kırçıklar İş Merkezi No:13/404, Bahçelievler / İstanbul",
@@ -10,8 +9,7 @@ en:{
  st_students:"Students Placed",st_uni:"Partner Universities",st_rate:"First-Choice Approval",st_countries:"Countries Served",
  uni_lab:"Partner Universities in Turkey"
 },
-tr:{
- nav_prog:"Programlar",nav_why:"Neden Türkiye",nav_faq:"SSS",nav_home:"Ana Sayfa",nav_about:"Hakkımızda",nav_services:"Hizmetler",nav_uni:"Üniversiteler",nav_denklik:"Denklik",nav_news:"Gündem",nav_contact:"İletişim",
+tr:{nav_team:"Ekibimiz",nav_prog:"Programlar",nav_why:"Neden Türkiye",nav_faq:"SSS",nav_home:"Ana Sayfa",nav_about:"Hakkımızda",nav_services:"Hizmetler",nav_uni:"Üniversiteler",nav_denklik:"Denklik",nav_news:"Gündem",nav_contact:"İletişim",
  apply:"Hemen Başvur",learn:"Daha Fazla",send_wa:"WhatsApp ile Gönder",
  f_about:"Al Azim Consulting; üniversite kabulü, oturum ve çalışma izinleri ile Türkiye'deki hukuki süreçlerde uluslararası öğrencilere destek verir. Türkiye'deki üniversitelerin resmi temsilcisi.",
  f_links:"Hızlı Bağlantılar",f_contact:"İletişim & Ofis",f_addr:"Hürriyet Mah. Mahmutbey Cad. Kırçıklar İş Merkezi No:13/404, Bahçelievler / İstanbul",
@@ -20,8 +18,7 @@ tr:{
  st_students:"Yerleştirilen Öğrenci",st_uni:"Partner Üniversite",st_rate:"İlk Tercihte Kabul",st_countries:"Hizmet Verilen Ülke",
  uni_lab:"Türkiye'deki Partner Üniversiteler"
 },
-tk:{
- nav_prog:"Maksatnamalar",nav_why:"Näme üçin Türkiýe",nav_faq:"Soraglar",nav_home:"Baş sahypa",nav_about:"Biz barada",nav_services:"Hyzmatlar",nav_uni:"Uniwersitetler",nav_denklik:"Deňlik",nav_news:"Habarlar",nav_contact:"Habarlaşmak",
+tk:{nav_team:"Toparymyz",nav_prog:"Maksatnamalar",nav_why:"Näme üçin Türkiýe",nav_faq:"Soraglar",nav_home:"Baş sahypa",nav_about:"Biz barada",nav_services:"Hyzmatlar",nav_uni:"Uniwersitetler",nav_denklik:"Deňlik",nav_news:"Habarlar",nav_contact:"Habarlaşmak",
  apply:"Ýüz tutmak",learn:"Giňişleýin",send_wa:"WhatsApp arkaly iber",
  f_about:"Al Azim Consulting uniwersitete kabul, ýaşaýyş we iş rugsatlary hem-de Türkiýedäki hukuk meselelerinde halkara talyplara goldaw berýär. Türkiýedäki uniwersitetleriň resmi wekili.",
  f_links:"Çalt baglanyşyklar",f_contact:"Habarlaşmak & Ofis",f_addr:"Hürriyet Mah. Mahmutbey Cad. Kırçıklar İş Merkezi No:13/404, Bahçelievler / Stambul",
@@ -30,8 +27,7 @@ tk:{
  st_students:"Ýerleşdirilen talyp",st_uni:"Hyzmatdaş uniwersitet",st_rate:"Ilkinji saýlawda kabul",st_countries:"Hyzmat edilýän ýurt",
  uni_lab:"Türkiýedäki hyzmatdaş uniwersitetler"
 },
-ru:{
- nav_prog:"Программы",nav_why:"Почему Турция",nav_faq:"Вопросы",nav_home:"Главная",nav_about:"О нас",nav_services:"Услуги",nav_uni:"Университеты",nav_denklik:"Признание диплома",nav_news:"Новости",nav_contact:"Контакты",
+ru:{nav_team:"Наша команда",nav_prog:"Программы",nav_why:"Почему Турция",nav_faq:"Вопросы",nav_home:"Главная",nav_about:"О нас",nav_services:"Услуги",nav_uni:"Университеты",nav_denklik:"Признание диплома",nav_news:"Новости",nav_contact:"Контакты",
  apply:"Подать заявку",learn:"Подробнее",send_wa:"Отправить в WhatsApp",
  f_about:"Al Azim Consulting помогает иностранным студентам с поступлением в университеты, видом на жительство, разрешением на работу и юридическим сопровождением в Турции. Официальный представитель университетов Турции.",
  f_links:"Быстрые ссылки",f_contact:"Контакты и офис",f_addr:"Hürriyet Mah. Mahmutbey Cad. Kırçıklar İş Merkezi No:13/404, Бахчелиэвлер / Стамбул",

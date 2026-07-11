@@ -1,0 +1,3 @@
+Program fotograflari icin dosya adlari (kucuk harf .jpg, ideal 800x450):
+medicine.jpg dentistry.jpg pharmacy.jpg engineering.jpg business.jpg law.jpg it.jpg nursing.jpg architecture.jpg
+Foto yoksa kart fotosuz gorunur, sorun olmaz.

@@ -38,6 +38,7 @@
 <div class="mobnav" id="mob">
   <a href="index.html" data-i18n="nav_home">Home</a>
   <a href="about.html" data-i18n="nav_about">About</a>
+  <a href="ekip.html" data-i18n="nav_team">Team</a>
   <a href="universities.html" data-i18n="nav_uni">Universities</a>
   <a href="programs.html" data-i18n="nav_prog">Programs</a>
   <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
@@ -87,6 +88,7 @@
       <div class="fcol">
         <h5 data-i18n="f_links">Quick Links</h5>
         <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="ekip.html" data-i18n="nav_team">Team</a>
         <a href="universities.html" data-i18n="nav_uni">Universities</a>
         <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
         <a href="gundem.html" data-i18n="nav_news">News</a>
@@ -104,7 +106,7 @@
       <div class="fcol">
         <h5 data-i18n="f_contact">Contact & Office</h5>
         <p data-i18n="f_addr"></p>
-        <p style="margin-top:10px">info@alazim.com</p>
+        <p style="margin-top:10px">alazimdanismanlik@gmail.com</p>
       </div>
     </div>
     <div class="fbot">
@@ -164,9 +166,12 @@ function renderUnis(){
   wrap.innerHTML='';
   UNIS.filter(u=>curFilter==='all'||u[1]===curFilter).forEach((u,i)=>{
     const d=document.createElement('div');d.className='uni-card rv';d.style.opacity=1;d.style.transform='none';
+    const priceLabels={en:'Tuition from',tr:'Yıllık ücret',tk:'Ýyllyk töleg',ru:'Стоимость от'};
+    const priceHtml=u[3]?`<div class="price">${priceLabels[lang()]||priceLabels.en}: ${u[3]}</div>`:'';
     d.innerHTML=`<div class="uni-img"><img src="img/unis/${u[2]}.jpg" alt="${u[0]}" loading="lazy" onerror="this.parentElement.remove()"></div>
       <h3>${u[0]}</h3>
       <div class="city"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${L[u[1]]}</div>
+      ${priceHtml}
       <a class="btn btn-gold apply" href="contact.html?u=${encodeURIComponent(u[0])}">${applyTxt}</a>`;
     wrap.appendChild(d);
     if(window.gsap){gsap.from(d,{y:30,opacity:0,duration:.6,delay:Math.min(i*.04,.5),ease:'power3.out'});}
