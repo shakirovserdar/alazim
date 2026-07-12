@@ -101,6 +101,17 @@
   </div>
 </section>
 
+<section class="block" id="articles" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow center" id="artListE">Guides & Articles</span>
+      <h2 id="artListT">Useful Articles</h2>
+      <p id="artListD">Practical guides written by our team.</p>
+    </div>
+    <div class="grid4" id="artGrid"></div>
+  </div>
+</section>
+
 <section style="padding:110px 28px 0">
   <div class="cta rv">
     <span class="eyebrow center">Al Azim Consulting</span>
@@ -191,6 +202,29 @@ ru:{w_eyebrow:"Учёба в Турции",w_title:'Почему <span class="go
  wc_t:"Стоимость жизни (примерно)",wc_d:"Общежитие / совместная квартира: 150–300 $ в месяц · Питание: 100–150 $ · Транспорт (студенческая карта): 10–15 $ · Комфортный бюджет: 400–650 € в месяц. Стамбул чуть дороже; Измир, Анкара, Бурса и Анталья дешевле."}
 };
 </script>
+<script src="js/articles.js"></script>
 <script src="js/main.js"></script>
+<script>
+(function(){
+  function L(){return localStorage.getItem('alazim_lang')||'en'}
+  function render(){
+    const l=L(), ui=ART_UI[l]||ART_UI.en;
+    document.getElementById('artListE').textContent=ui.listE;
+    document.getElementById('artListT').textContent=ui.listT;
+    document.getElementById('artListD').textContent=ui.listD;
+    const g=document.getElementById('artGrid'); g.innerHTML='';
+    Object.keys(ARTICLES).forEach((slug,i)=>{
+      const a=ARTICLES[slug][l]||ARTICLES[slug].en;
+      const d=document.createElement('div'); d.className='card rv vis'; if(i%4)d.dataset.d=i%4;
+      d.innerHTML=`<span class="eyebrow" style="font-size:10px">${ui.eyebrow} · ${a.m} ${ui.min}</span>
+        <h3 style="margin:10px 0 8px;font-size:19px">${a.t}</h3><p>${a.d}</p>
+        <a class="more" href="makale.html?a=${slug}" style="margin-top:14px;display:inline-block">${ui.read}</a>`;
+      g.appendChild(d);
+    });
+  }
+  render();
+  document.querySelectorAll('button[data-l]').forEach(b=>b.addEventListener('click',()=>setTimeout(render,10)));
+})();
+</script>
 </body>
 </html>
