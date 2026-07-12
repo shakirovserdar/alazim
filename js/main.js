@@ -3,7 +3,17 @@
   // language init
   let l='en'; try{l=localStorage.getItem('alazim_lang')||'en'}catch(e){}
   applyLang(l);
-  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.l)));
+  document.querySelectorAll('button[data-l]').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.l)));
+
+  // language dropdown
+  document.querySelectorAll('.langdd').forEach(dd=>{
+    const cur=dd.querySelector('.langcur');
+    cur.addEventListener('click',e=>{e.stopPropagation();dd.classList.toggle('open')});
+    dd.querySelectorAll('button[data-l]').forEach(b=>b.addEventListener('click',()=>dd.classList.remove('open')));
+  });
+  document.addEventListener('click',e=>{
+    document.querySelectorAll('.langdd.open').forEach(dd=>{if(!dd.contains(e.target))dd.classList.remove('open')});
+  });
 
   // header scroll
   const hdr=document.querySelector('header');

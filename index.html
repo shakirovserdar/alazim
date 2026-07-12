@@ -19,15 +19,39 @@
     <div class="menu">
       <nav>
         <a href="index.html" class="active" data-i18n="nav_home">Home</a>
-        <a href="about.html"  data-i18n="nav_about">About</a>
-        <a href="universities.html"  data-i18n="nav_uni">Universities</a>
-        
-        <a href="gundem.html"  data-i18n="nav_news">News</a>
-        <a href="contact.html"  data-i18n="nav_contact">Contact</a>
+        <div class="dd">
+          <a href="about.html" class="ddt" data-i18n="nav_about">About</a>
+          <div class="ddm">
+            <a href="about.html" data-i18n="nav_about">About</a>
+            <a href="ekip.html" data-i18n="nav_team">Our Team</a>
+          </div>
+        </div>
+        <div class="dd">
+          <a href="universities.html" class="ddt" data-i18n="nav_uni">Universities</a>
+          <div class="ddm">
+            <a href="universities.html" data-i18n="nav_uni">Universities</a>
+            <a href="programs.html" data-i18n="nav_prog">Programs</a>
+          </div>
+        </div>
+        <div class="dd">
+          <span class="ddt" data-i18n="nav_guide">Student Guide</span>
+          <div class="ddm">
+            <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
+            <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
+            <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+          </div>
+        </div>
+        <a href="gundem.html" data-i18n="nav_news">News</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
-      <div class="lang">
-        <button data-l="en">EN</button><button data-l="tr">TR</button>
-        <button data-l="tk">TK</button><button data-l="ru">RU</button>
+      <div class="langdd">
+        <button class="langcur" type="button" aria-label="Language"><span class="lc">EN</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="langlist">
+          <button data-l="en">English</button>
+          <button data-l="tr">Türkçe</button>
+          <button data-l="tk">Türkmençe</button>
+          <button data-l="ru">Русский</button>
+        </div>
       </div>
       <a class="btn btn-gold" href="contact.html" data-i18n="apply">Apply Now</a>
     </div>

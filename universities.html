@@ -18,16 +18,40 @@
       <div class="bt"><b>AL AZIM</b><small>CONSULTING</small></div></a>
     <div class="menu">
       <nav>
-        <a href="index.html"  data-i18n="nav_home">Home</a>
-        <a href="about.html"  data-i18n="nav_about">About</a>
-        <a href="universities.html" class="active" data-i18n="nav_uni">Universities</a>
-        
-        <a href="gundem.html"  data-i18n="nav_news">News</a>
-        <a href="contact.html"  data-i18n="nav_contact">Contact</a>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <div class="dd">
+          <a href="about.html" class="ddt" data-i18n="nav_about">About</a>
+          <div class="ddm">
+            <a href="about.html" data-i18n="nav_about">About</a>
+            <a href="ekip.html" data-i18n="nav_team">Our Team</a>
+          </div>
+        </div>
+        <div class="dd navactive">
+          <a href="universities.html" class="ddt" data-i18n="nav_uni">Universities</a>
+          <div class="ddm">
+            <a href="universities.html" data-i18n="nav_uni">Universities</a>
+            <a href="programs.html" data-i18n="nav_prog">Programs</a>
+          </div>
+        </div>
+        <div class="dd">
+          <span class="ddt" data-i18n="nav_guide">Student Guide</span>
+          <div class="ddm">
+            <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
+            <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
+            <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+          </div>
+        </div>
+        <a href="gundem.html" data-i18n="nav_news">News</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
-      <div class="lang">
-        <button data-l="en">EN</button><button data-l="tr">TR</button>
-        <button data-l="tk">TK</button><button data-l="ru">RU</button>
+      <div class="langdd">
+        <button class="langcur" type="button" aria-label="Language"><span class="lc">EN</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="langlist">
+          <button data-l="en">English</button>
+          <button data-l="tr">Türkçe</button>
+          <button data-l="tk">Türkmençe</button>
+          <button data-l="ru">Русский</button>
+        </div>
       </div>
       <a class="btn btn-gold" href="contact.html" data-i18n="apply">Apply Now</a>
     </div>
@@ -77,6 +101,19 @@
     </div>
   </div>
 </section>
+<div class="pmodal-ov" id="pmov" onclick="if(event.target===this)closePrices()">
+  <div class="pmodal">
+    <div class="pmodal-h">
+      <div><small id="pmEyebrow">Tuition Fees</small><h3 id="pmTitle"></h3></div>
+      <button class="pmodal-x" onclick="closePrices()" aria-label="Close">✕</button>
+    </div>
+    <div class="pmodal-b" id="pmBody"></div>
+    <div class="pmodal-f">
+      <a class="btn btn-ghost" id="pmWa" target="_blank" href="#"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.5-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.5.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.58-.35z"/></svg><span id="pmWaTxt">Ask on WhatsApp</span></a>
+      <a class="btn btn-gold" id="pmApply" href="contact.html">Apply Now</a>
+    </div>
+  </div>
+</div>
 <footer>
   <div class="wrap">
     <div class="fgrid">
@@ -130,14 +167,14 @@ ru:{u_eyebrow:"Официальный представитель",u_title:'Ун�
 const UNIS=[
 ["Koç University","ist-eu","koc"],["Sabancı University","ist-as","sabanci"],["Bilkent University","ankara","bilkent"],
 ["Acıbadem University","ist-as","acibadem"],["Kadir Has University","ist-eu","kadirhas"],["Bahçeşehir University (BAU)","ist-eu","bau"],
-["Istanbul Medipol University","ist-as","medipol"],["Ankara Medipol University","ankara","medipol-ankara"],["Biruni University","ist-eu","biruni"],
-["Istanbul Aydın University","ist-eu","aydin"],["Altınbaş University","ist-eu","altinbas"],["Istinye University","ist-eu","istinye"],
-["Özyeğin University","ist-as","ozyegin"],["Yeditepe University","ist-as","yeditepe"],["Üsküdar University","ist-as","uskudar"],
+["Istanbul Medipol University","ist-as","medipol","$4,000"],["Ankara Medipol University","ankara","medipol-ankara"],["Biruni University","ist-eu","biruni"],
+["Istanbul Aydın University","ist-eu","aydin"],["Altınbaş University","ist-eu","altinbas"],["Istinye University","ist-eu","istinye","$7,000"],
+["Özyeğin University","ist-as","ozyegin","$12,500"],["Yeditepe University","ist-as","yeditepe"],["Üsküdar University","ist-as","uskudar"],
 ["Haliç University","ist-eu","halic"],["Fenerbahçe University","ist-as","fenerbahce"],["Doğuş University","ist-as","dogus"],
-["Nişantaşı University","ist-eu","nisantasi"],["Istanbul Bilgi University","ist-eu","bilgi"],["Istanbul Gelişim University","ist-eu","gelisim"],
+["Nişantaşı University","ist-eu","nisantasi"],["Istanbul Bilgi University","ist-eu","bilgi","$4,800"],["Istanbul Gelişim University","ist-eu","gelisim","$4,000"],
 ["Istanbul Gedik University","ist-as","gedik"],["Istanbul Kültür University","ist-eu","kultur"],["Istanbul Galata University","ist-eu","galata"],
 ["Istanbul Yeni Yüzyıl University","ist-eu","yeniyuzyil"],["Istanbul Kent University","ist-eu","kent"],["Fatih Sultan Mehmet Vakıf University","ist-eu","fsm"],
-["Bezmialem Vakıf University","ist-eu","bezmialem"],["Beykoz University","ist-as","beykoz"],["Piri Reis University","ist-as","pirireis"],
+["Bezmialem Vakıf University","ist-eu","bezmialem","$3,500"],["Beykoz University","ist-as","beykoz"],["Piri Reis University","ist-as","pirireis"],
 ["Maltepe University","ist-as","maltepe"],["MEF University","ist-eu","mef"],["Işık University","ist-as","isik"],
 ["Atılım University","ankara","atilim"],["Yaşar University","izmir","yasar"],["İzmir Tınaztepe University","izmir","tinaztepe"],
 ["Antalya Bilim University","antalya","antalyabilim"],["Mudanya University","bursa","mudanya"]
@@ -149,6 +186,98 @@ const CITY_LABELS={
  ru:{all:"Все",'ist-eu':"Стамбул · Европа",'ist-as':"Стамбул · Анатолия",ankara:"Анкара",izmir:"Измир",antalya:"Анталья",bursa:"Бурса"}
 };
 let curFilter='all';
+
+/* ==== 2026-27 tuition (USD/year) — source: Al Azim official flyers ==== */
+const PRICES={
+bezmialem:{note:false,groups:[["Sağlık Bilimleri Fakültesi",[
+["Tıp Fakültesi",30000],["Diş Hekimliği Fakültesi",24000],["Eczacılık Fakültesi",15000],
+["Hemşirelik",8000],["Fizyoterapi",10000],["Ergoterapi",6000],["Sağlık Yönetimi",6000],
+["Beslenme ve Diyetetik",9000],["Odyoloji",8000],["SHMYO",3500]]],
+["__PREP__",[["Türkçe Hazırlık",5000],["İngilizce Hazırlık",10000]]]]},
+istinye:{note:false,groups:[
+["Tıp Fakültesi",[["Tıp",21859]]],
+["Diş Hekimliği Fakültesi",[["Diş Hekimliği",19000]]],
+["Eczacılık Fakültesi",[["Eczacılık",13300]]],
+["Sağlık Bilimleri Fakültesi",[["Hemşirelik",8000],["Ebelik",8000],["Çocuk Gelişimi",8000],["Beslenme ve Diyetetik",8000],["Dil ve Konuşma Terapisi",8000],["Fizyoterapi ve Rehabilitasyon",8000]]],
+["İktisadi ve İdari Bilimler",[["Lojistik Yönetimi",8000],["Siyaset Bilimi ve Kamu Yönetimi",8000],["Yönetim Bilişim Sistemleri",8000],["Sağlık Yönetimi",8000]]],
+["Mühendislik Fakültesi",[["Yazılım Geliştirme",8000],["Yazılım Mühendisliği",8000],["Bilgisayar Mühendisliği",8000]]],
+["Güzel Sanatlar Fakültesi",[["Moda ve Tekstil Tasarımı",7000],["İç Mimarlık ve Çevre Tasarımı",8000],["Gastronomi ve Mutfak Sanatları",8000]]],
+["İnsani ve Sosyal Bilimler",[["Türk Dili ve Edebiyatı",8000],["Psikoloji",8000]]]]},
+ozyegin:{note:false,groups:[
+["Sosyal Bilimler Fakültesi",[["Uluslararası İlişkiler (İng)",12500],["Psikoloji (İng)",12500],["Antropoloji (İng)",12500]]],
+["İşletme Fakültesi",[["İşletme (İng)",12500],["Uluslararası Finans",12500],["Yönetim Bilişim Sistemleri (İng)",12500],["Uluslararası Ticaret ve İşletme (İng)",12500],["Ekonomi (İng)",12500]]],
+["Mimarlık Fakültesi",[["Mimarlık B.Arch (İng)",12500],["Endüstriyel Tasarım (İng)",12500],["İç Mimarlık ve Çevre (İng)",12500],["İletişim Tasarımı (İng)",12500]]],
+["Uygulamalı Bilimler Fakültesi",[["Gastronomi ve Mutfak (İng)",12500],["Otel Yönetimi (İng)",12500]]],
+["Hukuk Fakültesi",[["Hukuk",12500]]],
+["Mühendislik Fakültesi",[["Bilgisayar Mühendisliği (İng)",12500],["Endüstri Mühendisliği (İng)",12500],["Makine Mühendisliği (İng)",12500],["Elektrik-Elektronik Mühendisliği (İng)",12500],["İnşaat Mühendisliği (İng)",12500],["Yapay Zeka ve Veri Mühendisliği (İng)",12500]]],
+["Havacılık ve Uzay Bilimleri",[["Havacılık Yönetimi (İng)",0],["Profesyonel Pilotaj (İng)",0]]]]},
+medipol:{note:true,groups:[
+["Tıp Fakültesi",[["Uluslararası Tıp %100 (İng)",44000],["Tıp %100 (İng)",40000],["Tıp %30 (İng) / %70 (Tr)",34000]]],
+["Diş Hekimliği Fakültesi",[["Diş Hekimliği (İng)",36000],["Diş Hekimliği %30 (İng) / %70 (Tr)",33000]]],
+["Eczacılık Fakültesi",[["Eczacılık (İng)",18000],["Eczacılık",15000]]],
+["Hukuk Fakültesi",[["Hukuk %30 (İng) / %70 (Tr)",8000]]],
+["Sağlık Bilimleri Fakültesi",[["Hemşirelik (İng)",6000],["Hemşirelik",8750],["Fizyoterapi ve Rehabilitasyon (İng)",9000],["Fizyoterapi ve Rehabilitasyon",8500],["Beslenme ve Diyetetik",4500],["Sağlık Yönetimi (İng)",4500],["Sağlık Yönetimi",6500],["Odyoloji",6500],["Ortez ve Protez",5000],["Çocuk Gelişimi",6000],["Ebelik",8000],["Ergoterapi",4500],["Sosyal Hizmet",4500],["Dil ve Konuşma Terapisi (İng)",4750],["Dil ve Konuşma Terapisi",4500]]],
+["Mühendislik ve Doğa Bilimleri",[["Yapay Zeka Mühendisliği (İng)",10000],["Elektrik-Elektronik Mühendisliği (İng)",6000],["Biyomedikal Mühendisliği (İng)",6500],["Endüstri Mühendisliği (İng)",4750],["Bilgisayar Mühendisliği (İng)",6500],["İnşaat Mühendisliği (İng)",5000],["İnşaat Mühendisliği",7000]]],
+["İşletme ve Yönetim Bilimleri",[["İşletme (İng)",5500],["Ekonomi ve Finans (İng)",4500],["Uluslararası Ticaret ve Finansman (İng)",4500],["Uluslararası Ticaret ve Finansman",6500],["Yönetim Bilişim Sistemleri (İng)",4500],["Yönetim Bilişim Sistemleri",6500],["Lojistik Yönetimi (İng)",4500],["Lojistik Yönetimi",6500],["İnsan Kaynakları Yönetimi",5500],["Havacılık Yönetimi (İng)",4500],["Havacılık Yönetimi",6500],["Bankacılık ve Sigortacılık",6500]]],
+["İnsan ve Toplum Bilimleri",[["Psikoloji (İng)",5500],["Psikoloji",6500],["Siyaset Bilimi ve Uluslararası İlişkiler (İng)",5500],["Siyaset Bilimi ve Kamu Yönetimi (İng)",5500],["Siyaset Bilimi ve Kamu Yönetimi",6000],["Tarih (İng)",6500]]],
+["Güzel Sanatlar, Tasarım ve Mimarlık",[["Mimarlık (İng)",5000],["Mimarlık",6500],["Endüstriyel Tasarım",5000],["İç Mimarlık ve Çevre Tasarımı (İng)",5000],["İç Mimarlık ve Çevre Tasarımı",6500],["Görsel İletişim Tasarımı",4500],["Türk Müziği",5000],["Gastronomi ve Mutfak Sanatları (İng)",4750],["Gastronomi ve Mutfak Sanatları",6000],["Kentsel Tasarım ve Peyzaj Mimarlığı",4500]]],
+["Eğitim Fakültesi",[["Rehberlik ve Psikolojik Danışmanlık (İng)",4500],["Rehberlik ve Psikolojik Danışmanlık",5500],["İngilizce Öğretmenliği (İng)",5500],["İlköğretim Matematik Öğretmenliği",5500],["Özel Eğitim Öğretmenliği",5500],["Okul Öncesi Öğretmenliği",5500]]],
+["İletişim Fakültesi",[["Gazetecilik",4500],["Halkla İlişkiler ve Reklamcılık (İng)",4500],["Halkla İlişkiler ve Reklamcılık",5500],["Medya ve Görsel Sanatlar",4500],["Yeni Medya ve İletişim",5500],["Radyo, Televizyon ve Sinema",5500]]],
+["Sağlık Bilimleri YO (Haliç Kampüsü)",[["Beslenme ve Diyetetik",4000],["Çocuk Gelişimi",5500],["Ebelik",8500],["Hemşirelik",7000],["Fizyoterapi ve Rehabilitasyon",7000],["Odyoloji",5000]]]]},
+gelisim:{note:true,groups:[
+["Diş Hekimliği Fakültesi",[["Diş Hekimliği (İng)",17250],["Diş Hekimliği",13500]]],
+["İktisadi, İdari ve Sosyal Bilimler",[["Reklamcılık",4000],["Havacılık Yönetimi (İng)",4250],["Havacılık Yönetimi",4000],["İşletme (İng)",4500],["İşletme",4000],["Ekonomi ve Finans (İng)",4250],["Ekonomi ve Finans",4000],["İngiliz Dili ve Edebiyatı (İng)",4250],["İngilizce Mütercim ve Tercümanlık (İng-Tr)",4250],["Uluslararası Ticaret ve İşletmecilik (İng)",4250],["Uluslararası Ticaret ve İşletmecilik",4000],["Uluslararası Ticaret ve Finansman (İng)",4250],["Uluslararası Ticaret ve Finansman",4000],["Lojistik Yönetimi (İng)",4250],["Lojistik Yönetimi",4000],["Yönetim Bilişim Sistemleri (İng)",4250],["Yönetim Bilişim Sistemleri",4000],["Yeni Medya ve İletişim",4000],["Siyaset Bilimi ve Uluslararası İlişkiler (İng)",4250],["Siyaset Bilimi ve Uluslararası İlişkiler",4000],["Siyaset Bilimi ve Kamu Yönetimi",4000],["Psikoloji (İng)",4250],["Psikoloji",4000],["Halkla İlişkiler ve Tanıtım",4000],["Radyo, Televizyon ve Sinema",4000],["Sosyoloji",4000],["Turizm Rehberliği",4000],["Türk Dili ve Edebiyatı",4000]]],
+["Mühendislik ve Mimarlık",[["Uçak Mühendisliği (İng)",6000],["Uçak Mühendisliği",4500],["Bilgisayar Mühendisliği (İng)",5500],["Bilgisayar Mühendisliği",4500],["Yazılım Mühendisliği (İng)",5500],["Yazılım Mühendisliği",4500],["İnşaat Mühendisliği (İng)",4750],["İnşaat Mühendisliği",4500],["Mimarlık (İng)",4750],["Mimarlık",4500],["Elektrik-Elektronik Mühendisliği (İng)",4750],["Elektrik-Elektronik Mühendisliği",4500],["Endüstri Mühendisliği",4500],["Mekatronik Mühendisliği",4500]]],
+["Güzel Sanatlar Fakültesi",[["İç Mimarlık ve Çevre Tasarımı (İng)",4250],["Gastronomi ve Mutfak Sanatları (İng)",4250],["Gastronomi ve Mutfak Sanatları",4000],["Grafik Tasarımı",4000],["İç Mimarlık",4000],["İç Mimarlık ve Çevre Tasarımı",4000],["Görsel İletişim Tasarımı",4000]]],
+["Sağlık Bilimleri Fakültesi",[["Hemşirelik (İng)",4250],["Hemşirelik",5000],["Çocuk Gelişimi (İng)",4250],["Çocuk Gelişimi",4000],["Sağlık Yönetimi",4000],["Odyoloji",4000],["Beslenme ve Diyetetik (İng)",4250],["Beslenme ve Diyetetik",4000],["Ergoterapi",4000],["Perfüzyon",4000],["Fizyoterapi ve Rehabilitasyon (İng)",4500],["Fizyoterapi ve Rehabilitasyon",4500],["Sosyal Hizmet",4000],["Dil ve Konuşma Terapisi",4000]]],
+["Uygulamalı Bilimler Fakültesi",[["Uçak Bakım ve Onarım",4000],["Havacılık Elektrik ve Elektroniği",4000],["Bankacılık ve Sigortacılık",4000],["Elektronik Ticaret ve Yönetimi",4000],["Bilişim Sistemleri ve Teknolojileri",4000],["Yeni Medya ve İletişim (İng)",4250],["Televizyon Haberciliği ve Programcılığı",4000],["Veri Bilimi ve Analitiği",4000],["Halkla İlişkiler ve Reklamcılık",4000]]],
+["Spor Bilimleri Fakültesi",[["Antrenörlük Eğitimi",4000],["Antrenörlük Eğitimi (İng)",4250],["Egzersiz ve Spor Bilimleri",4000],["Engellilerde Egzersiz ve Spor Bilimleri",4000],["Rekreasyon",4000],["Spor Yöneticiliği",4000]]]]},
+bilgi:{note:false,groups:[
+["Sosyal ve Beşeri Bilimler",[["Uluslararası İlişkiler",6600],["Siyaset Bilimi ve Yönetimi",6600],["Karşılaştırmalı Edebiyat",4800],["Sosyoloji",4800],["Psikoloji",7800],["Tarih",4800],["Müzik",6800],["İngiliz Dili ve Edebiyatı",4800]]],
+["Hukuk Fakültesi",[["Hukuk",9600]]],
+["İşletme Fakültesi",[["Ekonomi",7200],["İşletme",7200],["Ekonomi ve Finans",7200],["Uluslararası Finans",7200],["Yönetim Bilişim Sistemleri",7200],["Uluslararası Ticaret ve İşletme",7200],["Pazarlama",7200]]],
+["İletişim Fakültesi",[["Yeni Medya ve İletişim",6000],["Reklamcılık",6000],["Halkla İlişkiler ve Tanıtım",6000],["Radyo, Televizyon ve Sinema",6000],["Görsel İletişim Tasarımı",6000],["Televizyon Haberciliği",6000],["Sahne Sanatları Yönetimi",6000],["Dijital Oyun Tasarımı",7200],["İletişim Tasarımı ve Yönetimi",6000]]],
+["Mimarlık Fakültesi",[["Mimarlık",4800],["İç Mimarlık",7200],["Endüstriyel Tasarım",6000]]],
+["Mühendislik ve Doğa Bilimleri",[["Matematik",4800],["Bilgisayar Mühendisliği",7800],["Genetik ve Biyomühendislik",4800],["Elektrik-Elektronik Mühendisliği",4800],["Endüstri Mühendisliği",7800],["Makine Mühendisliği",4800],["İnşaat Mühendisliği",4800],["Mekatronik Mühendisliği",6000]]],
+["Sağlık Bilimleri Fakültesi",[["Beslenme ve Diyetetik (Tr)",6000],["Hemşirelik (Tr)",6000],["Fizyoterapi ve Rehabilitasyon (Tr)",6000],["Çocuk Gelişimi (Tr)",6000]]],
+["Uygulamalı Fakülte",[["Gastronomi ve Mutfak Sanatları",6000],["Turizm İşletmeciliği",6000],["Havacılık Yönetimi",6000],["Lojistik Yönetimi",6000],["Tekstil ve Moda Tasarımı",6000]]],
+["Bilişim Teknolojileri Yüksekokulu",[["Yazılım Geliştirme (Tr)",6600]]]]}
+};
+function dict(){return Object.assign({},I18N[lang()]||I18N.en,(window.PAGE_I18N&&window.PAGE_I18N[lang()])||{});}
+function openPrices(slug){
+  const P=PRICES[slug]; if(!P) return;
+  const name=(UNIS.find(x=>x[2]===slug)||[slug])[0];
+  const D=dict();
+  const ov=document.getElementById('pmov');
+  document.getElementById('pmTitle').textContent=name;
+  document.getElementById('pmEyebrow').textContent=D.p_prices||'Tuition Fees';
+  const b=document.getElementById('pmBody'); b.innerHTML='';
+  P.groups.forEach(g=>{
+    const h=document.createElement('h4');
+    h.textContent = g[0]==='__PREP__' ? (D.p_prep||'Prep. Programs') : g[0];
+    b.appendChild(h);
+    g[1].forEach(r=>{
+      const d=document.createElement('div'); d.className='prow';
+      const price = r[1]>0 ? '$'+r[1].toLocaleString('en-US')+' <small style="color:var(--dim2);font-weight:500">'+(D.p_year||'/year')+'</small>' : '—';
+      d.innerHTML='<span>'+r[0]+'</span><b>'+price+'</b>';
+      b.appendChild(d);
+    });
+  });
+  if(P.note){
+    const n=document.createElement('div'); n.className='pnote';
+    n.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="min-width:18px;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v5m0 3h.01"/></svg><span>'+(D.p_note||'')+'</span>';
+    b.appendChild(n);
+  }
+  document.getElementById('pmWa').href='https://wa.me/905346898493?text='+encodeURIComponent(name+' — '+(D.p_prices||'Tuition Fees'));
+  document.getElementById('pmApply').href='contact.html?u='+encodeURIComponent(name);
+  document.getElementById('pmApply').textContent=(I18N[lang()]||I18N.en).apply;
+  document.getElementById('pmWaTxt').textContent=D.p_ask||'Ask on WhatsApp';
+  ov.classList.add('show'); document.body.style.overflow='hidden';
+  b.scrollTop=0;
+}
+function closePrices(){document.getElementById('pmov').classList.remove('show');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePrices();});
+
 function lang(){try{return localStorage.getItem('alazim_lang')||'en'}catch(e){return 'en'}}
 function renderFilters(){
   const L=CITY_LABELS[lang()]||CITY_LABELS.en, f=document.getElementById('filters');
@@ -172,13 +301,14 @@ function renderUnis(){
       <h3>${u[0]}</h3>
       <div class="city"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${L[u[1]]}</div>
       ${priceHtml}
+      ${PRICES[u[2]]?`<button class="plink" onclick="openPrices('${u[2]}')">${(dict().p_btn||'Price List')} · 2026–27</button>`:''}
       <a class="btn btn-gold apply" href="contact.html?u=${encodeURIComponent(u[0])}">${applyTxt}</a>`;
     wrap.appendChild(d);
     if(window.gsap){gsap.from(d,{y:30,opacity:0,duration:.6,delay:Math.min(i*.04,.5),ease:'power3.out'});}
   });
 }
 renderFilters();renderUnis();
-document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{setTimeout(()=>{renderFilters();renderUnis();},10)}));
+document.querySelectorAll('button[data-l]').forEach(b=>b.addEventListener('click',()=>{setTimeout(()=>{renderFilters();renderUnis();},10)}));
 </script>
 <script src="js/main.js"></script>
 </body>
