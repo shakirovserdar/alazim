@@ -215,7 +215,7 @@ ru:{w_eyebrow:"Учёба в Турции",w_title:'Почему <span class="go
     const g=document.getElementById('artGrid'); g.innerHTML='';
     Object.keys(ARTICLES).forEach((slug,i)=>{
       const a=ARTICLES[slug][l]||ARTICLES[slug].en;
-      const d=document.createElement('div'); d.className='card rv vis'; if(i%4)d.dataset.d=i%4;
+      const d=document.createElement('div'); d.className='card'; d.style.opacity=1;
       d.innerHTML=`<span class="eyebrow" style="font-size:10px">${ui.eyebrow} · ${a.m} ${ui.min}</span>
         <h3 style="margin:10px 0 8px;font-size:19px">${a.t}</h3><p>${a.d}</p>
         <a class="more" href="makale.html?a=${slug}" style="margin-top:14px;display:inline-block">${ui.read}</a>`;
