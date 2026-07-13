@@ -74,7 +74,8 @@
 // service photo bands — dramatic reveal
 document.addEventListener('DOMContentLoaded',()=>{
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(window.gsap && window.ScrollTrigger && !reduced){
+  const isMobile=window.matchMedia('(max-width:820px)').matches;
+  if(window.gsap && window.ScrollTrigger && !reduced && !isMobile){
     document.querySelectorAll('.svcband').forEach(b=>{
       const img=b.querySelector('img');
       gsap.fromTo(b,{clipPath:'inset(9% 6% 9% 6% round 28px)',opacity:.35},

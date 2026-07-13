@@ -341,14 +341,14 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 30p
 .svcbands{max-width:1240px;margin:10px auto 0;padding:0 28px;display:flex;flex-direction:column;gap:26px}
 .svcband{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);height:clamp(380px,52vh,540px);display:flex;align-items:center;transition:border-color .3s}
 .svcband:hover{border-color:var(--line2)}
-.svcband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
+.svcband img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .svcband .sb-shade{position:absolute;inset:0}
 .svcband.sleft .sb-shade{background:linear-gradient(95deg,rgba(7,7,9,.84) 0%,rgba(7,7,9,.55) 36%,rgba(7,7,9,.06) 72%,rgba(7,7,9,.22) 100%)}
 .svcband.sright .sb-shade{background:linear-gradient(265deg,rgba(7,7,9,.84) 0%,rgba(7,7,9,.55) 36%,rgba(7,7,9,.06) 72%,rgba(7,7,9,.22) 100%)}
 .svcband .sb-pad{position:relative;z-index:2;width:100%;padding:0 58px}
 .svcband .sb-in{max-width:480px;display:flex;flex-direction:column;align-items:flex-start}
 .svcband.sright .sb-in{margin-left:auto}
-.sb-num{font-family:'Playfair Display';font-size:14px;color:var(--gold);letter-spacing:.34em;border:1px solid var(--line2);border-radius:30px;padding:7px 16px 6px;margin-bottom:16px;background:rgba(7,7,9,.4);backdrop-filter:blur(6px)}
+.sb-num{font-family:'Playfair Display';font-size:14px;color:var(--gold);letter-spacing:.34em;border:1px solid var(--line2);border-radius:30px;padding:7px 16px 6px;margin-bottom:16px;background:rgba(7,7,9,.6)}
 .svcband h3{font-family:'Playfair Display';font-size:clamp(26px,3vw,40px);margin-bottom:12px;text-shadow:0 4px 30px rgba(0,0,0,.65)}
 .svcband p{color:#e2dccf;font-size:15.5px;max-width:440px;margin-bottom:24px;text-shadow:0 2px 16px rgba(0,0,0,.7)}
 @media(max-width:640px){
