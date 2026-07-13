@@ -247,6 +247,23 @@
 
 <section class="block" style="padding-top:0">
   <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow center" data-i18n="gal_e">Moments</span>
+      <h2 data-i18n="gal_t">From Our Journey</h2>
+      <p data-i18n="gal_d">University visits, festivals and our students — live from the Al Azim family.</p>
+    </div>
+    <div class="gal rv" id="gal">
+      <img id="galA" alt="Al Azim Consulting" src="img/gallery/g01.jpg">
+      <img id="galB" alt="">
+      <button class="gal-nav gal-prev" aria-label="Previous">‹</button>
+      <button class="gal-nav gal-next" aria-label="Next">›</button>
+      <span class="gal-count" id="galCount">1 / 43</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
     <div class="head rv"><span class="eyebrow center" data-i18n="ts_eyebrow">Student Voices</span><h2 data-i18n="ts_title">Our Students Are Winning</h2></div>
     <div class="grid3">
       <div class="card rv"><p style="font-family:'Playfair Display';font-style:italic;font-size:17px;color:var(--text)" data-i18n="t1_q">"Thank you so much for helping and supporting me in making the most important decision of my life."</p><p style="margin-top:14px;color:var(--gold);font-weight:600">Aygül M. <span style="color:var(--dim2);font-weight:400" data-i18n="t1_w">· Medicine, Istanbul</span></p></div>
@@ -288,6 +305,14 @@
         <a href="index.html" class="brand" style="margin-bottom:18px"><img src="img/logo.png" alt="">
           <div class="bt"><b>AL AZIM</b><small>CONSULTING</small></div></a>
         <p data-i18n="f_about"></p>
+        <div class="socials">
+          <a href="https://www.instagram.com/alazim_consulting_official" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.youtube.com/@alazimdanismanlik" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.8-.5-5.5c-.3-1-1-1.7-2-2C18.8 4 12 4 12 4s-6.8 0-8.5.5c-1 .3-1.7 1-2 2C1 8.2 1 12 1 12s0 3.8.5 5.5c.3 1 1 1.7 2 2 1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5c1-.3 1.7-1 2-2 .5-1.7.5-5.5.5-5.5zM9.8 15.5v-7l6 3.5-6 3.5z"/></svg></a>
+          <a href="https://www.tiktok.com/@avukat.myratpermanov" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.2 1.8 3.9 4.4 4.1v3c-1.7 0-3.2-.5-4.4-1.4v6.6c0 3.6-2.5 6.1-5.9 6.1A5.7 5.7 0 0 1 5 15.7c0-3.4 2.6-5.9 6.2-5.7v3.1c-1.8-.3-3.2.8-3.2 2.5 0 1.6 1.2 2.8 2.7 2.8 1.7 0 2.9-1.2 2.9-3.2V3h3z"/></svg></a>
+          <a href="https://t.me/alazimconsulting" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.4 18.9 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.25.25-.45.45-.92.45l.33-4.7L18.4 6.6c.37-.33-.08-.52-.58-.19L7.3 13.1l-4.5-1.4c-1-.3-1-1 .2-1.5L20.6 3.1c.8-.3 1.5.2 1.3 1.3z"/></svg></a>
+          <a href="https://s.imoim.net/wNsOtD" target="_blank" rel="noopener" aria-label="imo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.14-2.9-.4L4 20l1.3-3.1C3.9 15.5 3 13.6 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5z"/><text x="12" y="14.5" text-anchor="middle" font-size="6.5" font-family="Arial" font-weight="bold" fill="currentColor" stroke="none">imo</text></svg></a>
+        </div>
+
       </div>
       <div class="fcol">
         <h5 data-i18n="f_links">Quick Links</h5>
@@ -390,5 +415,31 @@ ru:{ts_eyebrow:"Голоса студентов",ts_title:"Наши студен
 };
 </script>
 <script src="js/main.js"></script>
+<script>
+(function(){
+  const N=43, hold=2600, box=document.getElementById('gal');
+  if(!box) return;
+  const A=document.getElementById('galA'), B=document.getElementById('galB'), C=document.getElementById('galCount');
+  let cur=1, top=A, timer=null;
+  const src=i=>'img/gallery/g'+String(i).padStart(2,'0')+'.jpg';
+  function pre(i){const im=new Image(); im.src=src(i)}
+  function go(i){
+    cur=((i-1+N)%N)+1;
+    const back = top===A ? B : A;
+    back.src=src(cur);
+    back.onload=()=>{
+      back.classList.add('show'); top.classList.remove('show');
+      top=back; C.textContent=cur+' / '+N; pre(cur%N+1);
+    };
+  }
+  A.classList.add('show'); pre(2);
+  function play(){ timer=setInterval(()=>go(cur+1), hold); }
+  function reset(){ clearInterval(timer); play(); }
+  box.querySelector('.gal-next').addEventListener('click',()=>{go(cur+1);reset()});
+  box.querySelector('.gal-prev').addEventListener('click',()=>{go(cur-1);reset()});
+  document.addEventListener('visibilitychange',()=>{ if(document.hidden){clearInterval(timer)} else {reset()} });
+  play();
+})();
+</script>
 </body>
 </html>

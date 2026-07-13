@@ -361,3 +361,24 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 30p
   .svcband h3{font-size:24px}
   .svcband p{font-size:14px;margin-bottom:16px}
 }
+
+
+/* ===== footer socials ===== */
+.socials{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.socials a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dim);transition:.25s}
+.socials a svg{width:18px;height:18px}
+.socials a:hover{color:#1a1306;background:var(--grad);border-color:transparent;transform:translateY(-3px)}
+
+/* ===== homepage photo slideshow ===== */
+.gal{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);height:clamp(340px,58vh,600px);background:#0b0a0d}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
+.gal img.show{opacity:1}
+.gal-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:rgba(7,7,9,.55);color:var(--text);font-size:24px;line-height:1;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;padding-bottom:4px}
+.gal-nav:hover{background:var(--grad);color:#1a1306;border-color:transparent}
+.gal-prev{left:16px}.gal-next{right:16px}
+.gal-count{position:absolute;bottom:14px;right:18px;z-index:5;font-family:'Manrope';font-weight:700;font-size:12px;letter-spacing:.12em;color:var(--gold);background:rgba(7,7,9,.6);border:1px solid var(--line);border-radius:20px;padding:6px 13px}
+@media(max-width:640px){
+  .gal{height:46vh;min-height:300px;border-radius:18px}
+  .gal-nav{width:38px;height:38px;font-size:20px}
+  .gal-prev{left:10px}.gal-next{right:10px}
+}
