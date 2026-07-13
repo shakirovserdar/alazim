@@ -363,14 +363,22 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 30p
 }
 
 
-/* ===== footer socials ===== */
-.socials{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
-.socials a{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dim);transition:.25s}
-.socials a svg{width:18px;height:18px}
-.socials a:hover{color:#1a1306;background:var(--grad);border-color:transparent;transform:translateY(-3px)}
-
+/* ===== footer socials (brand app icons) ===== */
+.socials{display:flex;gap:11px;margin-top:20px;flex-wrap:wrap}
+.socials a{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;transition:.25s;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.socials a svg{width:21px;height:21px}
+.socials a:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 12px 26px rgba(0,0,0,.5)}
+.sc-wa{background:linear-gradient(135deg,#5BF77F,#25D366 55%,#1DA851)}
+.sc-ig{background:radial-gradient(circle at 30% 110%,#feda75 0%,#fa7e1e 28%,#d62976 55%,#962fbf 78%,#4f5bd5 100%)}
+.sc-yt{background:#FF0000}
+.sc-tt{background:#000;border:1px solid #2a2a2e}
+.sc-tt svg{filter:drop-shadow(1.4px 0 0 #fe2c55) drop-shadow(-1.4px 0 0 #25f4ee)}
+.sc-tg{background:linear-gradient(180deg,#2AABEE,#229ED9)}
+.sc-imo{background:linear-gradient(135deg,#3fc1ff,#0d8de8)}
+.sc-imo text{fill:#0d8de8}
+.sc-imo svg path{fill:#fff}
 /* ===== homepage photo slideshow ===== */
-.gal{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);height:clamp(340px,58vh,600px);background:#0b0a0d}
+.gal{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);height:clamp(420px,74vh,780px);background:#0b0a0d}
 .gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
 .gal img.show{opacity:1}
 .gal-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:rgba(7,7,9,.55);color:var(--text);font-size:24px;line-height:1;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;padding-bottom:4px}
