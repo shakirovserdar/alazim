@@ -69,3 +69,23 @@
     }
   });
 })();
+
+
+// service photo bands — dramatic reveal
+document.addEventListener('DOMContentLoaded',()=>{
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(window.gsap && window.ScrollTrigger && !reduced){
+    document.querySelectorAll('.svcband').forEach(b=>{
+      const img=b.querySelector('img');
+      gsap.fromTo(b,{clipPath:'inset(9% 6% 9% 6% round 28px)',opacity:.35},
+        {clipPath:'inset(0% 0% 0% 0% round 0px)',opacity:1,duration:1.15,ease:'power3.inOut',
+         scrollTrigger:{trigger:b,start:'top 82%'}});
+      gsap.fromTo(img,{scale:1.28},{scale:1,duration:1.9,ease:'power3.out',
+         scrollTrigger:{trigger:b,start:'top 82%'}});
+      gsap.fromTo(b.querySelectorAll('.sb-in > *'),{opacity:0,y:34},
+        {opacity:1,y:0,duration:.85,stagger:.1,ease:'power3.out',
+         scrollTrigger:{trigger:b,start:'top 72%'}});
+      gsap.to(img,{yPercent:8,ease:'none',scrollTrigger:{trigger:b,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+  }
+});
