@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Al Azim Consulting</title>
+<meta name="description" content="Official university application form — Al Azim Consulting, Istanbul.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><img src="img/logo.png" alt="Al Azim Consulting">
+      <div class="bt"><b>AL AZIM</b><small>CONSULTING</small></div></a>
+    <div class="menu">
+      <nav>
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <div class="dd">
+          <a href="about.html" class="ddt" data-i18n="nav_about">About</a>
+          <div class="ddm">
+            <a href="about.html" data-i18n="nav_about">About</a>
+            <a href="ekip.html" data-i18n="nav_team">Our Team</a>
+          </div>
+        </div>
+        <div class="dd">
+          <a href="universities.html" class="ddt" data-i18n="nav_uni">Universities</a>
+          <div class="ddm">
+            <a href="universities.html" data-i18n="nav_uni">Universities</a>
+            <a href="programs.html" data-i18n="nav_prog">Programs</a>
+          </div>
+        </div>
+        <div class="dd">
+          <span class="ddt" data-i18n="nav_guide">Student Guide</span>
+          <div class="ddm">
+            <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
+            <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
+            <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+          </div>
+        </div>
+        <a href="gundem.html" data-i18n="nav_news">News</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="langdd">
+        <button class="langcur" type="button" aria-label="Language"><span class="lc">EN</span><svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="langlist">
+          <button data-l="en">English</button>
+          <button data-l="tr">Türkçe</button>
+          <button data-l="tk">Türkmençe</button>
+          <button data-l="ru">Русский</button>
+        </div>
+      </div>
+      <a class="btn btn-gold" href="basvuru.html" data-i18n="apply">Apply Now</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="overlay" id="ov"></div>
+<div class="mobnav" id="mob">
+  <a href="index.html" data-i18n="nav_home">Home</a>
+  <a href="about.html" data-i18n="nav_about">About</a>
+  <a href="ekip.html" data-i18n="nav_team">Team</a>
+  <a href="universities.html" data-i18n="nav_uni">Universities</a>
+  <a href="programs.html" data-i18n="nav_prog">Programs</a>
+  <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
+  <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+  <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
+  <a href="gundem.html" data-i18n="nav_news">News</a>
+  <a href="contact.html" data-i18n="nav_contact">Contact</a>
+  <div class="lang">
+    <button data-l="en">EN</button><button data-l="tr">TR</button>
+    <button data-l="tk">TK</button><button data-l="ru">RU</button>
+  </div>
+</div>
+
+<!-- ===== dynamic university hero ===== -->
+<section class="aphero" id="aphero">
+  <img class="ap-bg" id="apBg" src="img/covers/city-ist-eu.svg" alt="">
+  <div class="ap-shade"></div>
+  <div class="wrap">
+    <div class="ap-logo" id="apLogo" style="display:grid;place-items:center;font-family:'Playfair Display';font-weight:700;font-size:30px;color:#1a1306">AZ</div>
+    <div class="ap-head">
+      <span class="eyebrow" data-i18n="a_eyebrow">Official Application Form</span>
+      <h1 id="apUniTitle" data-i18n="a_title">University <span class="gold">Application</span></h1>
+      <p class="ap-sub" data-i18n="a_sub">Fill in the form below — free application, no exams. Our advisor will contact you within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:56px">
+  <div class="wrap apform-wrap">
+    <form id="apForm" class="apform" autocomplete="on" novalidate>
+
+      <!-- 1. Application -->
+      <div class="apcard">
+        <div class="sect"><span class="sn">1</span><h3 data-i18n="a_s1">Application Details</h3></div>
+        <p class="sd" data-i18n="a_s1d">Choose the university and program you want to study.</p>
+        <div class="apform">
+          <div><label data-i18n="a_uni">University <span class="req">*</span></label>
+            <select id="f_uni" required></select></div>
+          <div class="row">
+            <div><label data-i18n="a_degree">Program Type <span class="req">*</span></label>
+              <select id="f_degree" required>
+                <option value="Lisans" data-i18n="a_deg1">Bachelor (Lisans)</option>
+                <option value="Önlisans" data-i18n="a_deg2">Associate (Önlisans)</option>
+                <option value="Yüksek Lisans" data-i18n="a_deg3">Master (Yüksek Lisans)</option>
+                <option value="Doktora" data-i18n="a_deg4">PhD (Doktora)</option>
+                <option value="Dil Kursu" data-i18n="a_deg5">Language Course (TÖMER)</option>
+              </select></div>
+            <div><label data-i18n="a_lang">Language of Study <span class="req">*</span></label>
+              <select id="f_lang" required>
+                <option value="Türkçe" data-i18n="a_lng1">Turkish</option>
+                <option value="İngilizce" data-i18n="a_lng2">English</option>
+                <option value="Farketmez" data-i18n="a_lng3">No preference</option>
+              </select></div>
+          </div>
+          <div><label data-i18n="a_p1">1st Choice — Department <span class="req">*</span></label>
+            <input id="f_p1" required data-i18n-ph="a_p1ph" placeholder="e.g. Medicine, Software Engineering..."></div>
+          <div class="row">
+            <div><label data-i18n="a_p2">2nd Choice — Department</label>
+              <input id="f_p2" data-i18n-ph="a_pxph" placeholder="Optional"></div>
+            <div><label data-i18n="a_p3">3rd Choice — Department</label>
+              <input id="f_p3" data-i18n-ph="a_pxph" placeholder="Optional"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Personal -->
+      <div class="apcard">
+        <div class="sect"><span class="sn">2</span><h3 data-i18n="a_s2">Personal Information</h3></div>
+        <p class="sd" data-i18n="a_s2d">Write your name exactly as it appears in your passport.</p>
+        <div class="apform">
+          <div class="row">
+            <div><label data-i18n="a_name">First Name <span class="req">*</span></label><input id="f_name" required autocomplete="given-name"></div>
+            <div><label data-i18n="a_surname">Surname <span class="req">*</span></label><input id="f_surname" required autocomplete="family-name"></div>
+          </div>
+          <div class="row">
+            <div><label data-i18n="a_father">Father's Name <span class="req">*</span></label><input id="f_father" required></div>
+            <div><label data-i18n="a_mother">Mother's Name <span class="req">*</span></label><input id="f_mother" required></div>
+          </div>
+          <div class="row">
+            <div><label data-i18n="a_dob">Date of Birth <span class="req">*</span></label><input id="f_dob" type="date" required max="2012-12-31" min="1960-01-01"></div>
+            <div><label data-i18n="a_gender">Gender</label>
+              <select id="f_gender">
+                <option value="" data-i18n="a_sel">— Select —</option>
+                <option value="Erkek" data-i18n="a_male">Male</option>
+                <option value="Kadın" data-i18n="a_female">Female</option>
+              </select></div>
+          </div>
+          <div class="row">
+            <div><label data-i18n="a_email">E-mail <span class="req">*</span></label><input id="f_email" type="email" required autocomplete="email" placeholder="name@gmail.com"></div>
+            <div><label data-i18n="a_phone">Phone / WhatsApp <span class="req">*</span></label><input id="f_phone" type="tel" required autocomplete="tel" placeholder="+993 6X XX XX XX"></div>
+          </div>
+          <div class="row">
+            <div><label data-i18n="a_nat">Citizenship <span class="req">*</span></label>
+              <select id="f_nat" required>
+                <option value="Türkmenistan">Türkmenistan</option>
+                <option value="Özbekistan">Özbekistan</option>
+                <option value="Kazakistan">Kazakistan</option>
+                <option value="Kırgızistan">Kırgızistan</option>
+                <option value="Tacikistan">Tacikistan</option>
+                <option value="Azerbaycan">Azerbaycan</option>
+                <option value="Rusya">Rusya</option>
+                <option value="Türkiye">Türkiye</option>
+                <option value="Diğer" data-i18n="a_other">Other</option>
+              </select></div>
+            <div><label data-i18n="a_res">Country of Residence <span class="req">*</span></label>
+              <select id="f_res" required>
+                <option value="Türkmenistan">Türkmenistan</option>
+                <option value="Türkiye">Türkiye</option>
+                <option value="Özbekistan">Özbekistan</option>
+                <option value="Kazakistan">Kazakistan</option>
+                <option value="Kırgızistan">Kırgızistan</option>
+                <option value="Rusya">Rusya</option>
+                <option value="Diğer" data-i18n="a_other">Other</option>
+              </select></div>
+          </div>
+          <div><label data-i18n="a_pass">Passport Number</label><input id="f_pass" data-i18n-ph="a_passph" placeholder="Optional — speeds up your application"></div>
+        </div>
+      </div>
+
+      <!-- 3. Education -->
+      <div class="apcard">
+        <div class="sect"><span class="sn">3</span><h3 data-i18n="a_s3">Education Background</h3></div>
+        <p class="sd" data-i18n="a_s3d">Your latest school and grades.</p>
+        <div class="apform">
+          <div><label data-i18n="a_grad">Graduation Status <span class="req">*</span></label>
+            <select id="f_grad" required>
+              <option value="" data-i18n="a_sel">— Select —</option>
+              <option value="Lise son sınıf" data-i18n="a_g1">Final year of high school</option>
+              <option value="Lise mezunu" data-i18n="a_g2">High school graduate</option>
+              <option value="Üniversite öğrencisi" data-i18n="a_g3">University student</option>
+              <option value="Üniversite mezunu" data-i18n="a_g4">University graduate</option>
+            </select></div>
+          <div class="row">
+            <div><label data-i18n="a_school">School Name <span class="req">*</span></label><input id="f_school" required data-i18n-ph="a_schoolph" placeholder="e.g. No. 12 High School, Ashgabat"></div>
+            <div><label data-i18n="a_gpa">Diploma Grade / GPA</label><input id="f_gpa" placeholder="4.7 / 5 — 93/100 — 3.7/4.0"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Documents -->
+      <div class="apcard">
+        <div class="sect"><span class="sn">4</span><h3 data-i18n="a_s4">Upload Your Documents</h3></div>
+        <p class="sd" data-i18n="a_s4d">Clear photos or PDF scans are fine. Max 10 MB per file. If your documents are not ready, you can send them later via WhatsApp.</p>
+        <div class="upgrid">
+          <label class="upbox" id="ub_passport">
+            <input type="file" data-doc="passport" accept=".pdf,.jpg,.jpeg,.png">
+            <span class="ui"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></span>
+            <b data-i18n="a_d1">Passport <span class="req">*</span></b>
+            <small class="fh" data-i18n="a_dsel">Tap to select a file</small>
+          </label>
+          <label class="upbox" id="ub_diploma">
+            <input type="file" data-doc="diploma" accept=".pdf,.jpg,.jpeg,.png">
+            <span class="ui"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+            <b data-i18n="a_d2">High School Diploma <span style="color:var(--dim2);font-weight:500">(if available)</span></b>
+            <small class="fh" data-i18n="a_dsel">Tap to select a file</small>
+          </label>
+          <label class="upbox" id="ub_transcript">
+            <input type="file" data-doc="transcript" accept=".pdf,.jpg,.jpeg,.png">
+            <span class="ui"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+            <b data-i18n="a_d3">Transcript <span style="color:var(--dim2);font-weight:500">(if available)</span></b>
+            <small class="fh" data-i18n="a_dsel">Tap to select a file</small>
+          </label>
+          <label class="upbox" id="ub_photo">
+            <input type="file" data-doc="photo" accept=".jpg,.jpeg,.png">
+            <span class="ui"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+            <b data-i18n="a_d4">Biometric Photo</b>
+            <small class="fh" data-i18n="a_dsel">Tap to select a file</small>
+          </label>
+          <label class="upbox" id="ub_other" style="grid-column:1/-1">
+            <input type="file" data-doc="other" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" multiple>
+            <span class="ui"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+            <b data-i18n="a_d5">Other Documents</b>
+            <small class="fh" data-i18n="a_d5d">Mavi Kart, residence permit, certificates... (multiple files allowed)</small>
+          </label>
+        </div>
+      </div>
+
+      <!-- 5. Extra + submit -->
+      <div class="apcard">
+        <div class="sect"><span class="sn">5</span><h3 data-i18n="a_s5">Additional Notes</h3></div>
+        <p class="sd" data-i18n="a_s5d">Anything else you want to tell us — scholarships, dormitory, special requests.</p>
+        <div class="apform">
+          <div><textarea id="f_msg" rows="4" data-i18n-ph="a_msgph" placeholder="Write here..."></textarea></div>
+          <div class="apnote"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v5m0 3h.01"/></svg>
+            <span data-i18n="a_note">Your information is only shared with the university you apply to. Application is completely free.</span></div>
+          <label class="apconsent"><input type="checkbox" id="f_kvkk" required>
+            <span data-i18n="a_kvkk">I consent to my information and documents being shared with Al Azim Consulting's partner universities, and I have read the privacy notice. <span class="req">*</span></span></label>
+          <button class="btn btn-gold apsubmit" type="submit" id="apBtn" data-i18n="a_send">SUBMIT APPLICATION</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- success -->
+    <div class="apcard apok" id="apOk">
+      <div class="okic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h3 data-i18n="a_okt">Application Received!</h3>
+      <p data-i18n="a_okd">Your details are ready in the WhatsApp chat that just opened — press send, then attach your documents in the same chat. Our advisor will reply within 24 hours.</p>
+      <a class="btn btn-gold" href="universities.html" data-i18n="a_okback">Explore More Universities</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol fabout">
+        <a href="index.html" class="brand" style="margin-bottom:18px"><img src="img/logo.png" alt="Al Azim">
+          <div class="bt"><b>AL AZIM</b><small>CONSULTING</small></div></a>
+        <p data-i18n="f_about"></p>
+      </div>
+      <div class="fcol">
+        <h5 data-i18n="f_links">Quick Links</h5>
+        <a href="about.html" data-i18n="nav_about">About</a>
+        <a href="universities.html" data-i18n="nav_uni">Universities</a>
+        <a href="denklik.html" data-i18n="nav_denklik">Equivalency</a>
+        <a href="gundem.html" data-i18n="nav_news">News</a>
+        <a href="programs.html" data-i18n="nav_prog">Programs</a>
+        <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
+        <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+      </div>
+      <div class="fcol">
+        <h5 data-i18n="nav_contact">Contact</h5>
+        <a href="basvuru.html" data-i18n="apply">Apply Now</a>
+        <a href="https://wa.me/905346898493" target="_blank">WhatsApp</a>
+        <a href="tel:+905346898493">+90 534 689 84 93</a>
+        <a href="tel:+905441519998">+90 544 151 99 98</a>
+      </div>
+      <div class="fcol">
+        <h5 data-i18n="f_contact">Contact & Office</h5>
+        <p data-i18n="f_addr"></p>
+        <p style="margin-top:10px">alazimdanismanlik@gmail.com</p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Al Azim Consulting. <span data-i18n="f_rights">All rights reserved.</span></span>
+      <span>Istanbul, Türkiye</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script>
+window.PAGE_I18N={
+en:{a_eyebrow:"Official Application Form",a_title:'University <span class="gold">Application</span>',a_sub:"Fill in the form below — free application, no exams. Our advisor will contact you within 24 hours.",
+a_s1:"Application Details",a_s1d:"Choose the university and program you want to study.",a_uni:'University <span class="req">*</span>',a_uni_any:"I'm not sure yet — recommend me",a_degree:'Program Type <span class="req">*</span>',a_deg1:"Bachelor (Lisans)",a_deg2:"Associate (Önlisans)",a_deg3:"Master (Yüksek Lisans)",a_deg4:"PhD (Doktora)",a_deg5:"Language Course (TÖMER)",a_lang:'Language of Study <span class="req">*</span>',a_lng1:"Turkish",a_lng2:"English",a_lng3:"No preference",a_p1:'1st Choice — Department <span class="req">*</span>',a_p1ph:"e.g. Medicine, Software Engineering...",a_p2:"2nd Choice — Department",a_p3:"3rd Choice — Department",a_pxph:"Optional",
+a_s2:"Personal Information",a_s2d:"Write your name exactly as it appears in your passport.",a_name:'First Name <span class="req">*</span>',a_surname:'Surname <span class="req">*</span>',a_father:'Father\'s Name <span class="req">*</span>',a_mother:'Mother\'s Name <span class="req">*</span>',a_dob:'Date of Birth <span class="req">*</span>',a_gender:"Gender",a_sel:"— Select —",a_male:"Male",a_female:"Female",a_email:'E-mail <span class="req">*</span>',a_phone:'Phone / WhatsApp <span class="req">*</span>',a_nat:'Citizenship <span class="req">*</span>',a_res:'Country of Residence <span class="req">*</span>',a_other:"Other",a_pass:"Passport Number",a_passph:"Optional — speeds up your application",
+a_s3:"Education Background",a_s3d:"Your latest school and grades.",a_grad:'Graduation Status <span class="req">*</span>',a_g1:"Final year of high school",a_g2:"High school graduate",a_g3:"University student",a_g4:"University graduate",a_school:'School Name <span class="req">*</span>',a_schoolph:"e.g. No. 12 High School, Ashgabat",a_gpa:"Diploma Grade / GPA",
+a_s4:"Upload Your Documents",a_s4d:"Clear photos or PDF scans are fine. Max 10 MB per file. If your documents are not ready, you can send them later via WhatsApp.",a_d1:'Passport <span class="req">*</span>',a_d2:'High School Diploma <span style="color:var(--dim2);font-weight:500">(if available)</span>',a_d3:'Transcript <span style="color:var(--dim2);font-weight:500">(if available)</span>',a_d4:"Biometric Photo",a_d5:"Other Documents",a_d5d:"Mavi Kart, residence permit, certificates... (multiple files allowed)",a_dsel:"Tap to select a file",
+a_s5:"Additional Notes",a_s5d:"Anything else you want to tell us — scholarships, dormitory, special requests.",a_msgph:"Write here...",a_note:"Your information is only shared with the university you apply to. Application is completely free.",a_kvkk:'I consent to my information and documents being shared with Al Azim Consulting\'s partner universities, and I have read the privacy notice. <span class="req">*</span>',a_send:"SUBMIT APPLICATION",
+a_okt:"Application Received!",a_okd:"Your details are ready in the WhatsApp chat that just opened — press send, then attach your documents in the same chat. Our advisor will reply within 24 hours.",a_okback:"Explore More Universities",a_err:"Please fill in all required fields."},
+tr:{a_eyebrow:"Resmi Başvuru Formu",a_title:'Üniversite <span class="gold">Başvurusu</span>',a_sub:"Aşağıdaki formu doldurun — sınavsız, ücretsiz başvuru. Danışmanımız 24 saat içinde size ulaşır.",
+a_s1:"Başvuru Bilgileri",a_s1d:"Okumak istediğiniz üniversite ve programı seçin.",a_uni:'Üniversite <span class="req">*</span>',a_uni_any:"Henüz karar vermedim — bana önerin",a_degree:'Program Türü <span class="req">*</span>',a_deg1:"Lisans",a_deg2:"Önlisans",a_deg3:"Yüksek Lisans",a_deg4:"Doktora",a_deg5:"Dil Kursu (TÖMER)",a_lang:'Eğitim Dili <span class="req">*</span>',a_lng1:"Türkçe",a_lng2:"İngilizce",a_lng3:"Farketmez",a_p1:'1. Tercih — Bölüm <span class="req">*</span>',a_p1ph:"örn. Tıp, Yazılım Mühendisliği...",a_p2:"2. Tercih — Bölüm",a_p3:"3. Tercih — Bölüm",a_pxph:"İsteğe bağlı",
+a_s2:"Kişisel Bilgiler",a_s2d:"Adınızı pasaportta yazıldığı gibi yazın.",a_name:'Ad <span class="req">*</span>',a_surname:'Soyad <span class="req">*</span>',a_father:'Baba Adı <span class="req">*</span>',a_mother:'Anne Adı <span class="req">*</span>',a_dob:'Doğum Tarihi <span class="req">*</span>',a_gender:"Cinsiyet",a_sel:"— Seçiniz —",a_male:"Erkek",a_female:"Kadın",a_email:'E-posta <span class="req">*</span>',a_phone:'Telefon / WhatsApp <span class="req">*</span>',a_nat:'Vatandaşlık <span class="req">*</span>',a_res:'İkamet Edilen Ülke <span class="req">*</span>',a_other:"Diğer",a_pass:"Pasaport Numarası",a_passph:"İsteğe bağlı — başvurunuzu hızlandırır",
+a_s3:"Eğitim Durumu",a_s3d:"Son okuduğunuz okul ve notlarınız.",a_grad:'Mezuniyet Durumu <span class="req">*</span>',a_g1:"Lise son sınıf öğrencisi",a_g2:"Lise mezunu",a_g3:"Üniversite öğrencisi",a_g4:"Üniversite mezunu",a_school:'Okul Adı <span class="req">*</span>',a_schoolph:"örn. 12 No'lu Lise, Aşkabat",a_gpa:"Diploma Notu / Ortalama",
+a_s4:"Belgelerinizi Yükleyin",a_s4d:"Net fotoğraf veya PDF tarama yeterli. Dosya başına en fazla 10 MB. Belgeleriniz hazır değilse daha sonra WhatsApp'tan da gönderebilirsiniz.",a_d1:'Pasaport <span class="req">*</span>',a_d2:'Lise Diploması <span style="color:var(--dim2);font-weight:500">(var ise)</span>',a_d3:'Transkript <span style="color:var(--dim2);font-weight:500">(var ise)</span>',a_d4:"Biyometrik Fotoğraf",a_d5:"Diğer Belgeler",a_d5d:"Mavi Kart, ikamet, sertifikalar... (birden fazla dosya seçilebilir)",a_dsel:"Dosya seçmek için dokunun",
+a_s5:"Ek Bilgiler",a_s5d:"Bize iletmek istediğiniz her şey — burs, yurt, özel istekler.",a_msgph:"Buraya yazın...",a_note:"Bilgileriniz yalnızca başvurduğunuz üniversite ile paylaşılır. Başvuru tamamen ücretsizdir.",a_kvkk:'Bilgilerimin ve belgelerimin Al Azim Consulting\'in partner üniversiteleriyle paylaşılmasına izin veriyorum, aydınlatma metnini okudum. <span class="req">*</span>',a_send:"BAŞVURUYU GÖNDER",
+a_okt:"Başvurunuz Alındı!",a_okd:"Bilgileriniz açılan WhatsApp sohbetinde hazır — gönder'e basın, ardından belgelerinizi aynı sohbete ekleyin. Danışmanımız 24 saat içinde dönüş yapar.",a_okback:"Diğer Üniversiteleri Keşfet",a_err:"Lütfen tüm zorunlu alanları doldurun."},
+tk:{a_eyebrow:"Resmi ýüz tutma formy",a_title:'Uniwersitete <span class="gold">ýüz tutma</span>',a_sub:"Aşakdaky formy dolduryň — synagsyz, mugt ýüz tutma. Maslahatçymyz 24 sagadyň içinde siziň bilen habarlaşar.",
+a_s1:"Ýüz tutma maglumatlary",a_s1d:"Okamak isleýän uniwersitetiňizi we programmaňyzy saýlaň.",a_uni:'Uniwersitet <span class="req">*</span>',a_uni_any:"Entek karar bermedim — maslahat beriň",a_degree:'Programma görnüşi <span class="req">*</span>',a_deg1:"Bakalawr (Lisans)",a_deg2:"Önlisans",a_deg3:"Magistratura",a_deg4:"Doktorantura",a_deg5:"Dil kursy (TÖMER)",a_lang:'Okuw dili <span class="req">*</span>',a_lng1:"Türk dili",a_lng2:"Iňlis dili",a_lng3:"Tapawudy ýok",a_p1:'1-nji saýlaw — Bölüm <span class="req">*</span>',a_p1ph:"mysal: Lukmançylyk, Programma inženerçiligi...",a_p2:"2-nji saýlaw — Bölüm",a_p3:"3-nji saýlaw — Bölüm",a_pxph:"Hökmany däl",
+a_s2:"Şahsy maglumatlar",a_s2d:"Adyňyzy pasportda ýazylyşy ýaly ýazyň.",a_name:'Ady <span class="req">*</span>',a_surname:'Familiýasy <span class="req">*</span>',a_father:'Kakasynyň ady <span class="req">*</span>',a_mother:'Ejesiniň ady <span class="req">*</span>',a_dob:'Doglan senesi <span class="req">*</span>',a_gender:"Jynsy",a_sel:"— Saýlaň —",a_male:"Erkek",a_female:"Zenan",a_email:'E-poçta <span class="req">*</span>',a_phone:'Telefon / WhatsApp <span class="req">*</span>',a_nat:'Raýatlygy <span class="req">*</span>',a_res:'Ýaşaýan ýurdy <span class="req">*</span>',a_other:"Başga",a_pass:"Pasport belgisi",a_passph:"Hökmany däl — ýüz tutmaňyzy çaltlaşdyrýar",
+a_s3:"Bilim ýagdaýy",a_s3d:"Soňky okan mekdebiňiz we bahalaryňyz.",a_grad:'Uçurym ýagdaýy <span class="req">*</span>',a_g1:"Mekdebiň soňky synp okuwçysy",a_g2:"Orta mekdebi tamamlan",a_g3:"Uniwersitet talyby",a_g4:"Uniwersiteti tamamlan",a_school:'Mekdebiň ady <span class="req">*</span>',a_schoolph:"mysal: 12-nji orta mekdep, Aşgabat",a_gpa:"Diplom bahasy / Ortaça baha",
+a_s4:"Resminamalaryňyzy ýükläň",a_s4d:"Anyk surat ýa-da PDF skaner ýeterlik. Her faýl iň köp 10 MB. Resminamalaryňyz taýýar däl bolsa, soňra WhatsApp arkaly hem iberip bilersiňiz.",a_d1:'Pasport <span class="req">*</span>',a_d2:'Orta mekdep şahadatnamasy <span style="color:var(--dim2);font-weight:500">(bar bolsa)</span>',a_d3:'Bahalar sanawy <span style="color:var(--dim2);font-weight:500">(bar bolsa)</span>',a_d4:"Biometrik surat",a_d5:"Başga resminamalar",a_d5d:"Mavi Kart, ýaşaýyş rugsady, sertifikatlar... (birnäçe faýl saýlap bolýar)",a_dsel:"Faýl saýlamak üçin basyň",
+a_s5:"Goşmaça maglumatlar",a_s5d:"Bize aýtmak isleýän zatlaryňyz — talyp haky, umumy ýaşaýyş jaýy, ýörite islegler.",a_msgph:"Şu ýere ýazyň...",a_note:"Maglumatlaryňyz diňe ýüz tutan uniwersitetiňiz bilen paýlaşylýar. Ýüz tutma doly mugt.",a_kvkk:'Maglumatlarymyň we resminamalarymyň Al Azim Consulting-iň hyzmatdaş uniwersitetleri bilen paýlaşylmagyna razylyk berýärin. <span class="req">*</span>',a_send:"ÝÜZ TUTMANY IBER",
+a_okt:"Ýüz tutmaňyz kabul edildi!",a_okd:"Maglumatlaryňyz açylan WhatsApp söhbetinde taýýar — ibermek düwmesine basyň, soňra resminamalaryňyzy şol söhbete goşuň. Maslahatçymyz 24 sagadyň içinde jogap berer.",a_okback:"Beýleki uniwersitetleri öwreniň",a_err:"Ähli hökmany meýdanlary dolduryň."},
+ru:{a_eyebrow:"Официальная форма заявки",a_title:'Заявка в <span class="gold">университет</span>',a_sub:"Заполните форму ниже — бесплатная заявка без экзаменов. Наш консультант свяжется с вами в течение 24 часов.",
+a_s1:"Данные заявки",a_s1d:"Выберите университет и программу обучения.",a_uni:'Университет <span class="req">*</span>',a_uni_any:"Ещё не решил(а) — посоветуйте мне",a_degree:'Тип программы <span class="req">*</span>',a_deg1:"Бакалавриат",a_deg2:"Önlisans (колледж)",a_deg3:"Магистратура",a_deg4:"Докторантура",a_deg5:"Языковые курсы (TÖMER)",a_lang:'Язык обучения <span class="req">*</span>',a_lng1:"Турецкий",a_lng2:"Английский",a_lng3:"Не важно",a_p1:'1-й выбор — специальность <span class="req">*</span>',a_p1ph:"напр. Медицина, Программная инженерия...",a_p2:"2-й выбор — специальность",a_p3:"3-й выбор — специальность",a_pxph:"Необязательно",
+a_s2:"Личные данные",a_s2d:"Пишите имя точно как в паспорте.",a_name:'Имя <span class="req">*</span>',a_surname:'Фамилия <span class="req">*</span>',a_father:'Имя отца <span class="req">*</span>',a_mother:'Имя матери <span class="req">*</span>',a_dob:'Дата рождения <span class="req">*</span>',a_gender:"Пол",a_sel:"— Выберите —",a_male:"Мужской",a_female:"Женский",a_email:'E-mail <span class="req">*</span>',a_phone:'Телефон / WhatsApp <span class="req">*</span>',a_nat:'Гражданство <span class="req">*</span>',a_res:'Страна проживания <span class="req">*</span>',a_other:"Другая",a_pass:"Номер паспорта",a_passph:"Необязательно — ускорит вашу заявку",
+a_s3:"Образование",a_s3d:"Последнее место учёбы и оценки.",a_grad:'Статус обучения <span class="req">*</span>',a_g1:"Выпускной класс школы",a_g2:"Окончил(а) школу",a_g3:"Студент университета",a_g4:"Окончил(а) университет",a_school:'Название школы <span class="req">*</span>',a_schoolph:"напр. Школа №12, Ашхабад",a_gpa:"Балл аттестата / Средний балл",
+a_s4:"Загрузите документы",a_s4d:"Достаточно чёткого фото или PDF-скана. Максимум 10 МБ на файл. Если документы не готовы, можно отправить их позже через WhatsApp.",a_d1:'Паспорт <span class="req">*</span>',a_d2:'Аттестат <span style="color:var(--dim2);font-weight:500">(если есть)</span>',a_d3:'Транскрипт <span style="color:var(--dim2);font-weight:500">(если есть)</span>',a_d4:"Биометрическое фото",a_d5:"Другие документы",a_d5d:"Mavi Kart, ВНЖ, сертификаты... (можно несколько файлов)",a_dsel:"Нажмите, чтобы выбрать файл",
+a_s5:"Дополнительно",a_s5d:"Всё, что хотите сообщить — стипендии, общежитие, особые пожелания.",a_msgph:"Напишите здесь...",a_note:"Ваши данные передаются только выбранному университету. Заявка полностью бесплатна.",a_kvkk:'Я согласен(на) на передачу моих данных и документов университетам-партнёрам Al Azim Consulting, с положением о конфиденциальности ознакомлен(а). <span class="req">*</span>',a_send:"ОТПРАВИТЬ ЗАЯВКУ",
+a_okt:"Заявка принята!",a_okd:"Ваши данные готовы в открывшемся чате WhatsApp — нажмите «отправить», затем прикрепите документы в тот же чат. Консультант ответит в течение 24 часов.",a_okback:"Смотреть другие университеты",a_err:"Заполните все обязательные поля."}
+};
+</script>
+<script>
+/* ===== application logic ===== */
+const WA_NUMBER='905346898493';
+const API_ENDPOINT=null; /* later: '/api/basvuru' — switches to e-mail delivery with attachments */
+
+const UNIS=[
+["Koç University","ist-eu","koc"],["Sabancı University","ist-as","sabanci"],["Bilkent University","ankara","bilkent"],
+["Acıbadem University","ist-as","acibadem"],["Kadir Has University","ist-eu","kadirhas"],["Bahçeşehir University (BAU)","ist-eu","bau"],
+["Istanbul Medipol University","ist-as","medipol"],["Ankara Medipol University","ankara","medipol-ankara"],["Biruni University","ist-eu","biruni"],
+["Istanbul Aydın University","ist-eu","aydin"],["Altınbaş University","ist-eu","altinbas"],["Istinye University","ist-eu","istinye"],
+["Özyeğin University","ist-as","ozyegin"],["Yeditepe University","ist-as","yeditepe"],["Üsküdar University","ist-as","uskudar"],
+["Haliç University","ist-eu","halic"],["Fenerbahçe University","ist-as","fenerbahce"],["Doğuş University","ist-as","dogus"],
+["Nişantaşı University","ist-eu","nisantasi"],["Istanbul Bilgi University","ist-eu","bilgi"],["Istanbul Gelişim University","ist-eu","gelisim"],
+["Istanbul Gedik University","ist-as","gedik"],["Istanbul Kültür University","ist-eu","kultur"],["Istanbul Galata University","ist-eu","galata"],
+["Istanbul Yeni Yüzyıl University","ist-eu","yeniyuzyil"],["Istanbul Kent University","ist-eu","kent"],["Fatih Sultan Mehmet Vakıf University","ist-eu","fsm"],
+["Bezmialem Vakıf University","ist-eu","bezmialem"],["Beykoz University","ist-as","beykoz"],["Piri Reis University","ist-as","pirireis"],
+["Maltepe University","ist-as","maltepe"],["MEF University","ist-eu","mef"],["Işık University","ist-as","isik"],
+["Atılım University","ankara","atilim"],["Yaşar University","izmir","yasar"],["İzmir Tınaztepe University","izmir","tinaztepe"],
+["Antalya Bilim University","antalya","antalyabilim"],["Mudanya University","bursa","mudanya"]
+];
+function lang(){try{return localStorage.getItem('alazim_lang')||'en'}catch(e){return 'en'}}
+function D(){return Object.assign({},window.I18N[lang()]||I18N.en,(window.PAGE_I18N&&window.PAGE_I18N[lang()])||{});}
+
+/* --- populate university select + hero --- */
+const params=new URLSearchParams(location.search);
+const uSlug=params.get('u')||'';
+const uniSel=document.getElementById('f_uni');
+function fillUniSelect(){
+  const cur=uniSel.value;
+  uniSel.innerHTML='';
+  const any=document.createElement('option');any.value='__any__';any.textContent=D().a_uni_any;uniSel.appendChild(any);
+  UNIS.forEach(u=>{const o=document.createElement('option');o.value=u[2];o.textContent=u[0];uniSel.appendChild(o);});
+  if(cur)uniSel.value=cur;
+}
+fillUniSelect();
+function initials(name){return name.replace(/University|Üniversitesi|\(.*?\)/gi,'').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();}
+function setHero(slug){
+  const u=UNIS.find(x=>x[2]===slug);
+  const bg=document.getElementById('apBg'), logo=document.getElementById('apLogo'), title=document.getElementById('apUniTitle');
+  if(u){
+    bg.src='img/unis/'+u[2]+'.jpg';
+    bg.onerror=function(){this.onerror=null;this.src='img/covers/city-'+u[1]+'.svg'};
+    logo.textContent=initials(u[0]);
+    const parts=u[0].split(' ');
+    title.removeAttribute('data-i18n');
+    title.innerHTML=parts.slice(0,-1).join(' ')+' <span class="gold">'+parts.slice(-1)+'</span>';
+  }else{
+    bg.src='img/home/graduation.jpg'; bg.onerror=function(){this.onerror=null;this.src='img/covers/city-ist-eu.svg'};
+    logo.textContent='AZ';
+  }
+}
+if(uSlug&&UNIS.some(x=>x[2]===uSlug)){uniSel.value=uSlug;setHero(uSlug);}else{setHero(null);}
+const pParam=params.get('p'); if(pParam)document.getElementById('f_p1').value=pParam;
+uniSel.addEventListener('change',()=>setHero(uniSel.value));
+
+/* --- file boxes --- */
+const FILES={};
+document.querySelectorAll('.upbox input[type=file]').forEach(inp=>{
+  inp.addEventListener('change',()=>{
+    const box=inp.closest('.upbox'), hint=box.querySelector('.fh');
+    const fs=[...inp.files];
+    const tooBig=fs.find(f=>f.size>10*1024*1024);
+    if(tooBig){alert(tooBig.name+' — > 10 MB');inp.value='';box.classList.remove('has');hint.textContent=D().a_dsel;delete FILES[inp.dataset.doc];return;}
+    if(fs.length){box.classList.add('has');hint.innerHTML='<span class="fname">'+fs.map(f=>f.name).join(', ')+'</span>';FILES[inp.dataset.doc]=fs.map(f=>f.name);}
+    else{box.classList.remove('has');hint.textContent=D().a_dsel;delete FILES[inp.dataset.doc];}
+  });
+});
+
+/* --- submit --- */
+document.getElementById('apForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=id=>document.getElementById(id).value.trim();
+  const form=document.getElementById('apForm');
+  if(!form.checkValidity()){form.reportValidity();return;}
+  const uniName=uniSel.value==='__any__'?D().a_uni_any:(UNIS.find(x=>x[2]===uniSel.value)||['—'])[0];
+  const docsList=Object.entries(FILES).map(([k,v])=>v.join(', ')).flat().join(', ')||'—';
+  const lines=[
+    '📋 YENİ BAŞVURU — Al Azim',
+    '━━━━━━━━━━━━━━',
+    '🏛 Üniversite: '+uniName,
+    '🎓 Program: '+f('f_degree')+' / '+f('f_lang'),
+    '1️⃣ Tercih: '+f('f_p1'),
+    f('f_p2')?'2️⃣ Tercih: '+f('f_p2'):null,
+    f('f_p3')?'3️⃣ Tercih: '+f('f_p3'):null,
+    '━━━━━━━━━━━━━━',
+    '👤 '+f('f_name')+' '+f('f_surname'),
+    '👨 Baba: '+f('f_father')+'  👩 Anne: '+f('f_mother'),
+    '🎂 Doğum: '+f('f_dob')+(f('f_gender')?'  ⚧ '+f('f_gender'):''),
+    '📧 '+f('f_email'),
+    '📱 '+f('f_phone'),
+    '🌍 Vatandaşlık: '+f('f_nat')+' / İkamet: '+f('f_res'),
+    f('f_pass')?'🛂 Pasaport No: '+f('f_pass'):null,
+    '━━━━━━━━━━━━━━',
+    '🏫 '+f('f_grad')+' — '+f('f_school'),
+    f('f_gpa')?'📊 Not: '+f('f_gpa'):null,
+    '📎 Belgeler: '+docsList,
+    f('f_msg')?'💬 Not: '+f('f_msg'):null
+  ].filter(Boolean);
+  const text=lines.join('\n');
+
+  if(API_ENDPOINT){
+    /* future e-mail path: multipart POST with files → serverless → Resend */
+  }else{
+    window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(text),'_blank');
+  }
+  form.style.display='none';
+  document.getElementById('apOk').classList.add('show');
+  document.getElementById('apOk').scrollIntoView({behavior:'smooth',block:'center'});
+});
+
+/* re-render dynamic bits on language switch */
+document.querySelectorAll('button[data-l]').forEach(b=>b.addEventListener('click',()=>{setTimeout(()=>{fillUniSelect();if(!(uniSel.value&&uniSel.value!=='__any__'))setHero(null);},10)}));
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

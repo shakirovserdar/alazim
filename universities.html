@@ -53,7 +53,7 @@
           <button data-l="ru">Русский</button>
         </div>
       </div>
-      <a class="btn btn-gold" href="contact.html" data-i18n="apply">Apply Now</a>
+      <a class="btn btn-gold" href="basvuru.html" data-i18n="apply">Apply Now</a>
     </div>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -96,7 +96,7 @@
     <h2 data-i18n="cta_title">Begin your journey to Turkey</h2>
     <p data-i18n="cta_sub">Contact us today and let's start your acceptance process at universities in Turkey — free application, no exams.</p>
     <div class="cta-row">
-      <a class="btn btn-gold" href="contact.html" data-i18n="apply">Apply Now</a>
+      <a class="btn btn-gold" href="basvuru.html" data-i18n="apply">Apply Now</a>
       <a class="btn btn-ghost" href="https://wa.me/905346898493" target="_blank" data-i18n="cta_call">Talk to an Advisor</a>
     </div>
   </div>
@@ -144,7 +144,7 @@
       </div>
       <div class="fcol">
         <h5 data-i18n="nav_contact">Contact</h5>
-        <a href="contact.html" data-i18n="apply">Apply Now</a>
+        <a href="basvuru.html" data-i18n="apply">Apply Now</a>
         <a href="https://wa.me/905346898493" target="_blank">WhatsApp</a>
         <a href="tel:+905346898493">+90 534 689 84 93</a>
         <a href="tel:+905441519998">+90 544 151 99 98</a>
@@ -278,7 +278,7 @@ function openPrices(slug){
     b.appendChild(n);
   }
   document.getElementById('pmWa').href='https://wa.me/905346898493?text='+encodeURIComponent(name+' — '+(D.p_prices||'Tuition Fees'));
-  document.getElementById('pmApply').href='contact.html?u='+encodeURIComponent(name);
+  document.getElementById('pmApply').href='basvuru.html?u='+slug;
   document.getElementById('pmApply').textContent=(I18N[lang()]||I18N.en).apply;
   document.getElementById('pmWaTxt').textContent=D.p_ask||'Ask on WhatsApp';
   ov.classList.add('show'); document.body.style.overflow='hidden';
@@ -311,7 +311,7 @@ function renderUnis(){
       <div class="city"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${L[u[1]]}</div>
       ${priceHtml}
       ${PRICES[u[2]]?`<button class="plink" onclick="openPrices('${u[2]}')">${(dict().p_btn||'Price List')} · 2026–27</button>`:''}
-      <a class="btn btn-gold apply" href="contact.html?u=${encodeURIComponent(u[0])}">${applyTxt}</a>`;
+      <a class="btn btn-gold apply" href="basvuru.html?u=${u[2]}">${applyTxt}</a>`;
     wrap.appendChild(d);
     if(window.gsap){gsap.from(d,{y:30,opacity:0,duration:.6,delay:Math.min(i*.04,.5),ease:'power3.out'});}
   });

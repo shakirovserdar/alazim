@@ -390,3 +390,54 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 30p
   .gal-nav{width:38px;height:38px;font-size:20px}
   .gal-prev{left:10px}.gal-next{right:10px}
 }
+
+
+/* ===== application page (basvuru) ===== */
+.aphero{position:relative;min-height:56vh;display:flex;align-items:flex-end;padding:170px 0 54px;overflow:hidden;background:var(--bg)}
+.aphero .ap-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.aphero .ap-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,9,.66) 0%,rgba(7,7,9,.38) 42%,rgba(7,7,9,.94) 100%)}
+.aphero .wrap{position:relative;z-index:2;display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.ap-logo{width:96px;height:96px;border-radius:50%;background:#fff;border:2px solid var(--gold);box-shadow:0 14px 40px rgba(0,0,0,.55);object-fit:cover;flex:none}
+.ap-head h1{font-size:clamp(30px,4.6vw,54px);margin-top:14px;text-shadow:0 4px 30px rgba(0,0,0,.7)}
+.ap-head .ap-sub{color:#e2dccf;margin-top:10px;font-size:15.5px;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.apform-wrap{max-width:860px;margin:0 auto}
+.apcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:44px 46px;margin-bottom:26px}
+.apcard .sect{display:flex;align-items:center;gap:14px;margin:0 0 8px}
+.apcard .sect .sn{font-family:'Playfair Display';font-size:15px;color:var(--gold);border:1px solid var(--line2);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;flex:none}
+.apcard .sect h3{font-size:22px}
+.apcard .sd{color:var(--dim2);font-size:13.5px;margin-bottom:26px}
+.apform{display:grid;gap:18px}
+.apform .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.apform .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.apform label{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim2);font-weight:600;display:block;margin-bottom:7px}
+.apform label .req{color:var(--gold);font-weight:700}
+.apform input,.apform select,.apform textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;color:var(--text);font-family:'Manrope';font-size:15px;padding:13px 15px;transition:.3s;outline:none;color-scheme:dark}
+.apform input:focus,.apform select:focus,.apform textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,106,.10)}
+.apform select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23d4af6a' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;cursor:pointer}
+.upgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.upbox{position:relative;border:1.5px dashed var(--line2);border-radius:14px;background:var(--bg2);padding:22px 18px;text-align:center;cursor:pointer;transition:.3s}
+.upbox:hover{border-color:var(--gold);background:rgba(212,175,106,.04)}
+.upbox.has{border-style:solid;border-color:var(--gold);background:rgba(212,175,106,.06)}
+.upbox input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.upbox .ui{width:44px;height:44px;margin:0 auto 10px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center}
+.upbox .ui svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.upbox b{display:block;font-size:14px;font-weight:700}
+.upbox small{display:block;color:var(--dim2);font-size:12px;margin-top:5px;line-height:1.5;word-break:break-word}
+.upbox .fname{color:var(--gold);font-weight:600}
+.apnote{display:flex;gap:12px;align-items:flex-start;background:rgba(212,175,106,.07);border:1px solid var(--line);border-radius:12px;padding:15px 17px;font-size:13.5px;color:var(--dim);line-height:1.6}
+.apnote svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.8;flex:none;margin-top:2px}
+.apconsent{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--dim);line-height:1.6;cursor:pointer}
+.apconsent input{width:19px;height:19px;flex:none;margin-top:2px;accent-color:#d4af6a;cursor:pointer}
+.apsubmit{width:100%;justify-content:center;font-size:15px;padding:17px 24px;border-radius:12px}
+.apok{display:none;text-align:center;padding:60px 30px}
+.apok.show{display:block}
+.apok .okic{width:84px;height:84px;margin:0 auto 24px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;background:radial-gradient(circle at 50% 30%,rgba(212,175,106,.16),transparent)}
+.apok .okic svg{width:38px;height:38px;stroke:var(--gold);fill:none;stroke-width:2}
+.apok h3{font-size:28px;margin-bottom:12px}
+.apok p{color:var(--dim);max-width:46ch;margin:0 auto 26px}
+@media(max-width:760px){
+  .aphero{min-height:46vh;padding:130px 0 40px}
+  .ap-logo{width:72px;height:72px}
+  .apcard{padding:30px 20px;border-radius:16px}
+  .apform .row,.apform .row3,.upgrid{grid-template-columns:1fr}
+}
