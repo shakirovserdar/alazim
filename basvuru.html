@@ -117,6 +117,11 @@
                 <option value="Farketmez" data-i18n="a_lng3">No preference</option>
               </select></div>
           </div>
+          <div><label data-i18n="a_sem">Starting Semester <span class="req">*</span></label>
+            <select id="f_sem" required>
+              <option value="Fall 2026-2027">Fall 2026-2027 (Sep)</option>
+              <option value="Spring 2026-2027">Spring 2026-2027 (Feb)</option>
+            </select></div>
           <div><label data-i18n="a_p1">1st Choice — Department <span class="req">*</span></label>
             <input id="f_p1" required data-i18n-ph="a_p1ph" placeholder="e.g. Medicine, Software Engineering..."></div>
           <div class="row">
@@ -178,7 +183,7 @@
                 <option value="Diğer" data-i18n="a_other">Other</option>
               </select></div>
           </div>
-          <div><label data-i18n="a_pass">Passport Number</label><input id="f_pass" data-i18n-ph="a_passph" placeholder="Optional — speeds up your application"></div>
+          <div><label data-i18n="a_pass">Passport Number <span class="req">*</span></label><input id="f_pass" required data-i18n-ph="a_passph" placeholder="AB1234567"></div>
         </div>
       </div>
 
@@ -282,6 +287,7 @@
         <a href="programs.html" data-i18n="nav_prog">Programs</a>
         <a href="why-turkey.html" data-i18n="nav_why">Why Turkey</a>
         <a href="faq.html" data-i18n="nav_faq">FAQ</a>
+        <a href="medipol-yabanci-ogrenci-basvuru.html">Medipol Başvuru 2026</a>
       </div>
       <div class="fcol">
         <h5 data-i18n="nav_contact">Contact</h5>
@@ -308,28 +314,28 @@
 window.PAGE_I18N={
 en:{a_eyebrow:"Official Application Form",a_title:'University <span class="gold">Application</span>',a_sub:"Fill in the form below — free application, no exams. Our advisor will contact you within 24 hours.",
 a_s1:"Application Details",a_s1d:"Choose the university and program you want to study.",a_uni:'University <span class="req">*</span>',a_uni_any:"I'm not sure yet — recommend me",a_degree:'Program Type <span class="req">*</span>',a_deg1:"Bachelor (Lisans)",a_deg2:"Associate (Önlisans)",a_deg3:"Master (Yüksek Lisans)",a_deg4:"PhD (Doktora)",a_deg5:"Language Course (TÖMER)",a_lang:'Language of Study <span class="req">*</span>',a_lng1:"Turkish",a_lng2:"English",a_lng3:"No preference",a_p1:'1st Choice — Department <span class="req">*</span>',a_p1ph:"e.g. Medicine, Software Engineering...",a_p2:"2nd Choice — Department",a_p3:"3rd Choice — Department",a_pxph:"Optional",
-a_s2:"Personal Information",a_s2d:"Write your name exactly as it appears in your passport.",a_name:'First Name <span class="req">*</span>',a_surname:'Surname <span class="req">*</span>',a_father:'Father\'s Name <span class="req">*</span>',a_mother:'Mother\'s Name <span class="req">*</span>',a_dob:'Date of Birth <span class="req">*</span>',a_gender:"Gender",a_sel:"— Select —",a_male:"Male",a_female:"Female",a_email:'E-mail <span class="req">*</span>',a_phone:'Phone / WhatsApp <span class="req">*</span>',a_nat:'Citizenship <span class="req">*</span>',a_res:'Country of Residence <span class="req">*</span>',a_other:"Other",a_pass:"Passport Number",a_passph:"Optional — speeds up your application",
+a_s2:"Personal Information",a_s2d:"Write your name exactly as it appears in your passport.",a_name:'First Name <span class="req">*</span>',a_surname:'Surname <span class="req">*</span>',a_father:'Father\'s Name <span class="req">*</span>',a_mother:'Mother\'s Name <span class="req">*</span>',a_dob:'Date of Birth <span class="req">*</span>',a_gender:"Gender",a_sel:"— Select —",a_male:"Male",a_female:"Female",a_email:'E-mail <span class="req">*</span>',a_phone:'Phone / WhatsApp <span class="req">*</span>',a_nat:'Citizenship <span class="req">*</span>',a_res:'Country of Residence <span class="req">*</span>',a_other:"Other",a_pass:'Passport Number <span class="req">*</span>',a_passph:"AB1234567",a_sem:'Starting Semester <span class="req">*</span>',a_toobig:"Files are too large. Please upload only your passport and send the rest via WhatsApp.",a_appno:"Application No",
 a_s3:"Education Background",a_s3d:"Your latest school and grades.",a_grad:'Graduation Status <span class="req">*</span>',a_g1:"Final year of high school",a_g2:"High school graduate",a_g3:"University student",a_g4:"University graduate",a_school:'School Name <span class="req">*</span>',a_schoolph:"e.g. No. 12 High School, Ashgabat",a_gpa:"Diploma Grade / GPA",
 a_s4:"Upload Your Documents",a_s4d:"Clear photos or PDF scans are fine. Max 10 MB per file. If your documents are not ready, you can send them later via WhatsApp.",a_d1:'Passport <span class="req">*</span>',a_d2:'High School Diploma <span style="color:var(--dim2);font-weight:500">(if available)</span>',a_d3:'Transcript <span style="color:var(--dim2);font-weight:500">(if available)</span>',a_d4:"Biometric Photo",a_d5:"Other Documents",a_d5d:"Mavi Kart, residence permit, certificates... (multiple files allowed)",a_dsel:"Tap to select a file",
 a_s5:"Additional Notes",a_s5d:"Anything else you want to tell us — scholarships, dormitory, special requests.",a_msgph:"Write here...",a_note:"Your information is only shared with the university you apply to. Application is completely free.",a_kvkk:'I consent to my information and documents being shared with Al Azim Consulting\'s partner universities, and I have read the privacy notice. <span class="req">*</span>',a_send:"SUBMIT APPLICATION",
 a_okt:"Application Received!",a_okd:"Your details are ready in the WhatsApp chat that just opened — press send, then attach your documents in the same chat. Our advisor will reply within 24 hours.",a_okback:"Explore More Universities",a_err:"Please fill in all required fields."},
 tr:{a_eyebrow:"Resmi Başvuru Formu",a_title:'Üniversite <span class="gold">Başvurusu</span>',a_sub:"Aşağıdaki formu doldurun — sınavsız, ücretsiz başvuru. Danışmanımız 24 saat içinde size ulaşır.",
 a_s1:"Başvuru Bilgileri",a_s1d:"Okumak istediğiniz üniversite ve programı seçin.",a_uni:'Üniversite <span class="req">*</span>',a_uni_any:"Henüz karar vermedim — bana önerin",a_degree:'Program Türü <span class="req">*</span>',a_deg1:"Lisans",a_deg2:"Önlisans",a_deg3:"Yüksek Lisans",a_deg4:"Doktora",a_deg5:"Dil Kursu (TÖMER)",a_lang:'Eğitim Dili <span class="req">*</span>',a_lng1:"Türkçe",a_lng2:"İngilizce",a_lng3:"Farketmez",a_p1:'1. Tercih — Bölüm <span class="req">*</span>',a_p1ph:"örn. Tıp, Yazılım Mühendisliği...",a_p2:"2. Tercih — Bölüm",a_p3:"3. Tercih — Bölüm",a_pxph:"İsteğe bağlı",
-a_s2:"Kişisel Bilgiler",a_s2d:"Adınızı pasaportta yazıldığı gibi yazın.",a_name:'Ad <span class="req">*</span>',a_surname:'Soyad <span class="req">*</span>',a_father:'Baba Adı <span class="req">*</span>',a_mother:'Anne Adı <span class="req">*</span>',a_dob:'Doğum Tarihi <span class="req">*</span>',a_gender:"Cinsiyet",a_sel:"— Seçiniz —",a_male:"Erkek",a_female:"Kadın",a_email:'E-posta <span class="req">*</span>',a_phone:'Telefon / WhatsApp <span class="req">*</span>',a_nat:'Vatandaşlık <span class="req">*</span>',a_res:'İkamet Edilen Ülke <span class="req">*</span>',a_other:"Diğer",a_pass:"Pasaport Numarası",a_passph:"İsteğe bağlı — başvurunuzu hızlandırır",
+a_s2:"Kişisel Bilgiler",a_s2d:"Adınızı pasaportta yazıldığı gibi yazın.",a_name:'Ad <span class="req">*</span>',a_surname:'Soyad <span class="req">*</span>',a_father:'Baba Adı <span class="req">*</span>',a_mother:'Anne Adı <span class="req">*</span>',a_dob:'Doğum Tarihi <span class="req">*</span>',a_gender:"Cinsiyet",a_sel:"— Seçiniz —",a_male:"Erkek",a_female:"Kadın",a_email:'E-posta <span class="req">*</span>',a_phone:'Telefon / WhatsApp <span class="req">*</span>',a_nat:'Vatandaşlık <span class="req">*</span>',a_res:'İkamet Edilen Ülke <span class="req">*</span>',a_other:"Diğer",a_pass:'Pasaport Numarası <span class="req">*</span>',a_passph:"AB1234567",a_sem:'Başlangıç Dönemi <span class="req">*</span>',a_toobig:"Dosyalar çok büyük. Lütfen sadece pasaportu yükleyin, kalan belgeleri WhatsApp üzerinden gönderin.",a_appno:"Başvuru No",
 a_s3:"Eğitim Durumu",a_s3d:"Son okuduğunuz okul ve notlarınız.",a_grad:'Mezuniyet Durumu <span class="req">*</span>',a_g1:"Lise son sınıf öğrencisi",a_g2:"Lise mezunu",a_g3:"Üniversite öğrencisi",a_g4:"Üniversite mezunu",a_school:'Okul Adı <span class="req">*</span>',a_schoolph:"örn. 12 No'lu Lise, Aşkabat",a_gpa:"Diploma Notu / Ortalama",
 a_s4:"Belgelerinizi Yükleyin",a_s4d:"Net fotoğraf veya PDF tarama yeterli. Dosya başına en fazla 10 MB. Belgeleriniz hazır değilse daha sonra WhatsApp'tan da gönderebilirsiniz.",a_d1:'Pasaport <span class="req">*</span>',a_d2:'Lise Diploması <span style="color:var(--dim2);font-weight:500">(var ise)</span>',a_d3:'Transkript <span style="color:var(--dim2);font-weight:500">(var ise)</span>',a_d4:"Biyometrik Fotoğraf",a_d5:"Diğer Belgeler",a_d5d:"Mavi Kart, ikamet, sertifikalar... (birden fazla dosya seçilebilir)",a_dsel:"Dosya seçmek için dokunun",
 a_s5:"Ek Bilgiler",a_s5d:"Bize iletmek istediğiniz her şey — burs, yurt, özel istekler.",a_msgph:"Buraya yazın...",a_note:"Bilgileriniz yalnızca başvurduğunuz üniversite ile paylaşılır. Başvuru tamamen ücretsizdir.",a_kvkk:'Bilgilerimin ve belgelerimin Al Azim Consulting\'in partner üniversiteleriyle paylaşılmasına izin veriyorum, aydınlatma metnini okudum. <span class="req">*</span>',a_send:"BAŞVURUYU GÖNDER",
 a_okt:"Başvurunuz Alındı!",a_okd:"Bilgileriniz açılan WhatsApp sohbetinde hazır — gönder'e basın, ardından belgelerinizi aynı sohbete ekleyin. Danışmanımız 24 saat içinde dönüş yapar.",a_okback:"Diğer Üniversiteleri Keşfet",a_err:"Lütfen tüm zorunlu alanları doldurun."},
 tk:{a_eyebrow:"Resmi ýüz tutma formy",a_title:'Uniwersitete <span class="gold">ýüz tutma</span>',a_sub:"Aşakdaky formy dolduryň — synagsyz, mugt ýüz tutma. Maslahatçymyz 24 sagadyň içinde siziň bilen habarlaşar.",
 a_s1:"Ýüz tutma maglumatlary",a_s1d:"Okamak isleýän uniwersitetiňizi we programmaňyzy saýlaň.",a_uni:'Uniwersitet <span class="req">*</span>',a_uni_any:"Entek karar bermedim — maslahat beriň",a_degree:'Programma görnüşi <span class="req">*</span>',a_deg1:"Bakalawr (Lisans)",a_deg2:"Önlisans",a_deg3:"Magistratura",a_deg4:"Doktorantura",a_deg5:"Dil kursy (TÖMER)",a_lang:'Okuw dili <span class="req">*</span>',a_lng1:"Türk dili",a_lng2:"Iňlis dili",a_lng3:"Tapawudy ýok",a_p1:'1-nji saýlaw — Bölüm <span class="req">*</span>',a_p1ph:"mysal: Lukmançylyk, Programma inženerçiligi...",a_p2:"2-nji saýlaw — Bölüm",a_p3:"3-nji saýlaw — Bölüm",a_pxph:"Hökmany däl",
-a_s2:"Şahsy maglumatlar",a_s2d:"Adyňyzy pasportda ýazylyşy ýaly ýazyň.",a_name:'Ady <span class="req">*</span>',a_surname:'Familiýasy <span class="req">*</span>',a_father:'Kakasynyň ady <span class="req">*</span>',a_mother:'Ejesiniň ady <span class="req">*</span>',a_dob:'Doglan senesi <span class="req">*</span>',a_gender:"Jynsy",a_sel:"— Saýlaň —",a_male:"Erkek",a_female:"Zenan",a_email:'E-poçta <span class="req">*</span>',a_phone:'Telefon / WhatsApp <span class="req">*</span>',a_nat:'Raýatlygy <span class="req">*</span>',a_res:'Ýaşaýan ýurdy <span class="req">*</span>',a_other:"Başga",a_pass:"Pasport belgisi",a_passph:"Hökmany däl — ýüz tutmaňyzy çaltlaşdyrýar",
+a_s2:"Şahsy maglumatlar",a_s2d:"Adyňyzy pasportda ýazylyşy ýaly ýazyň.",a_name:'Ady <span class="req">*</span>',a_surname:'Familiýasy <span class="req">*</span>',a_father:'Kakasynyň ady <span class="req">*</span>',a_mother:'Ejesiniň ady <span class="req">*</span>',a_dob:'Doglan senesi <span class="req">*</span>',a_gender:"Jynsy",a_sel:"— Saýlaň —",a_male:"Erkek",a_female:"Zenan",a_email:'E-poçta <span class="req">*</span>',a_phone:'Telefon / WhatsApp <span class="req">*</span>',a_nat:'Raýatlygy <span class="req">*</span>',a_res:'Ýaşaýan ýurdy <span class="req">*</span>',a_other:"Başga",a_pass:'Pasport belgisi <span class="req">*</span>',a_passph:"AB1234567",a_sem:'Başlangyç semestri <span class="req">*</span>',a_toobig:"Faýllar gaty uly. Diňe pasporty ýükläň, galanyny WhatsApp arkaly iberiň.",a_appno:"Ýüz tutma belgisi",
 a_s3:"Bilim ýagdaýy",a_s3d:"Soňky okan mekdebiňiz we bahalaryňyz.",a_grad:'Uçurym ýagdaýy <span class="req">*</span>',a_g1:"Mekdebiň soňky synp okuwçysy",a_g2:"Orta mekdebi tamamlan",a_g3:"Uniwersitet talyby",a_g4:"Uniwersiteti tamamlan",a_school:'Mekdebiň ady <span class="req">*</span>',a_schoolph:"mysal: 12-nji orta mekdep, Aşgabat",a_gpa:"Diplom bahasy / Ortaça baha",
 a_s4:"Resminamalaryňyzy ýükläň",a_s4d:"Anyk surat ýa-da PDF skaner ýeterlik. Her faýl iň köp 10 MB. Resminamalaryňyz taýýar däl bolsa, soňra WhatsApp arkaly hem iberip bilersiňiz.",a_d1:'Pasport <span class="req">*</span>',a_d2:'Orta mekdep şahadatnamasy <span style="color:var(--dim2);font-weight:500">(bar bolsa)</span>',a_d3:'Bahalar sanawy <span style="color:var(--dim2);font-weight:500">(bar bolsa)</span>',a_d4:"Biometrik surat",a_d5:"Başga resminamalar",a_d5d:"Mavi Kart, ýaşaýyş rugsady, sertifikatlar... (birnäçe faýl saýlap bolýar)",a_dsel:"Faýl saýlamak üçin basyň",
 a_s5:"Goşmaça maglumatlar",a_s5d:"Bize aýtmak isleýän zatlaryňyz — talyp haky, umumy ýaşaýyş jaýy, ýörite islegler.",a_msgph:"Şu ýere ýazyň...",a_note:"Maglumatlaryňyz diňe ýüz tutan uniwersitetiňiz bilen paýlaşylýar. Ýüz tutma doly mugt.",a_kvkk:'Maglumatlarymyň we resminamalarymyň Al Azim Consulting-iň hyzmatdaş uniwersitetleri bilen paýlaşylmagyna razylyk berýärin. <span class="req">*</span>',a_send:"ÝÜZ TUTMANY IBER",
 a_okt:"Ýüz tutmaňyz kabul edildi!",a_okd:"Maglumatlaryňyz açylan WhatsApp söhbetinde taýýar — ibermek düwmesine basyň, soňra resminamalaryňyzy şol söhbete goşuň. Maslahatçymyz 24 sagadyň içinde jogap berer.",a_okback:"Beýleki uniwersitetleri öwreniň",a_err:"Ähli hökmany meýdanlary dolduryň."},
 ru:{a_eyebrow:"Официальная форма заявки",a_title:'Заявка в <span class="gold">университет</span>',a_sub:"Заполните форму ниже — бесплатная заявка без экзаменов. Наш консультант свяжется с вами в течение 24 часов.",
 a_s1:"Данные заявки",a_s1d:"Выберите университет и программу обучения.",a_uni:'Университет <span class="req">*</span>',a_uni_any:"Ещё не решил(а) — посоветуйте мне",a_degree:'Тип программы <span class="req">*</span>',a_deg1:"Бакалавриат",a_deg2:"Önlisans (колледж)",a_deg3:"Магистратура",a_deg4:"Докторантура",a_deg5:"Языковые курсы (TÖMER)",a_lang:'Язык обучения <span class="req">*</span>',a_lng1:"Турецкий",a_lng2:"Английский",a_lng3:"Не важно",a_p1:'1-й выбор — специальность <span class="req">*</span>',a_p1ph:"напр. Медицина, Программная инженерия...",a_p2:"2-й выбор — специальность",a_p3:"3-й выбор — специальность",a_pxph:"Необязательно",
-a_s2:"Личные данные",a_s2d:"Пишите имя точно как в паспорте.",a_name:'Имя <span class="req">*</span>',a_surname:'Фамилия <span class="req">*</span>',a_father:'Имя отца <span class="req">*</span>',a_mother:'Имя матери <span class="req">*</span>',a_dob:'Дата рождения <span class="req">*</span>',a_gender:"Пол",a_sel:"— Выберите —",a_male:"Мужской",a_female:"Женский",a_email:'E-mail <span class="req">*</span>',a_phone:'Телефон / WhatsApp <span class="req">*</span>',a_nat:'Гражданство <span class="req">*</span>',a_res:'Страна проживания <span class="req">*</span>',a_other:"Другая",a_pass:"Номер паспорта",a_passph:"Необязательно — ускорит вашу заявку",
+a_s2:"Личные данные",a_s2d:"Пишите имя точно как в паспорте.",a_name:'Имя <span class="req">*</span>',a_surname:'Фамилия <span class="req">*</span>',a_father:'Имя отца <span class="req">*</span>',a_mother:'Имя матери <span class="req">*</span>',a_dob:'Дата рождения <span class="req">*</span>',a_gender:"Пол",a_sel:"— Выберите —",a_male:"Мужской",a_female:"Женский",a_email:'E-mail <span class="req">*</span>',a_phone:'Телефон / WhatsApp <span class="req">*</span>',a_nat:'Гражданство <span class="req">*</span>',a_res:'Страна проживания <span class="req">*</span>',a_other:"Другая",a_pass:'Номер паспорта <span class="req">*</span>',a_passph:"AB1234567",a_sem:'Семестр начала <span class="req">*</span>',a_toobig:"Файлы слишком большие. Загрузите только паспорт, остальные документы отправьте через WhatsApp.",a_appno:"Номер заявки",
 a_s3:"Образование",a_s3d:"Последнее место учёбы и оценки.",a_grad:'Статус обучения <span class="req">*</span>',a_g1:"Выпускной класс школы",a_g2:"Окончил(а) школу",a_g3:"Студент университета",a_g4:"Окончил(а) университет",a_school:'Название школы <span class="req">*</span>',a_schoolph:"напр. Школа №12, Ашхабад",a_gpa:"Балл аттестата / Средний балл",
 a_s4:"Загрузите документы",a_s4d:"Достаточно чёткого фото или PDF-скана. Максимум 10 МБ на файл. Если документы не готовы, можно отправить их позже через WhatsApp.",a_d1:'Паспорт <span class="req">*</span>',a_d2:'Аттестат <span style="color:var(--dim2);font-weight:500">(если есть)</span>',a_d3:'Транскрипт <span style="color:var(--dim2);font-weight:500">(если есть)</span>',a_d4:"Биометрическое фото",a_d5:"Другие документы",a_d5d:"Mavi Kart, ВНЖ, сертификаты... (можно несколько файлов)",a_dsel:"Нажмите, чтобы выбрать файл",
 a_s5:"Дополнительно",a_s5d:"Всё, что хотите сообщить — стипендии, общежитие, особые пожелания.",a_msgph:"Напишите здесь...",a_note:"Ваши данные передаются только выбранному университету. Заявка полностью бесплатна.",a_kvkk:'Я согласен(на) на передачу моих данных и документов университетам-партнёрам Al Azim Consulting, с положением о конфиденциальности ознакомлен(а). <span class="req">*</span>',a_send:"ОТПРАВИТЬ ЗАЯВКУ",
@@ -404,19 +410,38 @@ document.querySelectorAll('.upbox input[type=file]').forEach(inp=>{
   });
 });
 
-/* --- submit --- */
-document.getElementById('apForm').addEventListener('submit',async e=>{
-  e.preventDefault();
-  const f=id=>document.getElementById(id).value.trim();
-  const form=document.getElementById('apForm');
-  if(!form.checkValidity()){form.reportValidity();return;}
-  const uniName=uniSel.value==='__any__'?D().a_uni_any:(UNIS.find(x=>x[2]===uniSel.value)||['—'])[0];
-  const docsList=Object.entries(FILES).map(([k,v])=>v.join(', ')).flat().join(', ')||'—';
-  const lines=[
-    '📋 YENİ BAŞVURU — Al Azim',
-    '━━━━━━━━━━━━━━',
+/* --- submit: compress images, send to /api/basvuru, WhatsApp fallback --- */
+async function fileToPayload(file){
+  const isImg=/^image\//.test(file.type);
+  let blob=file;
+  if(isImg && file.size>600*1024){
+    blob=await new Promise(res=>{
+      const img=new Image();
+      img.onload=()=>{
+        const max=1600, s=Math.min(1,max/Math.max(img.width,img.height));
+        const c=document.createElement('canvas');
+        c.width=Math.round(img.width*s); c.height=Math.round(img.height*s);
+        c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+        c.toBlob(b=>res(b||file),'image/jpeg',.82);
+      };
+      img.onerror=()=>res(file);
+      img.src=URL.createObjectURL(file);
+    });
+  }
+  const b64=await new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=()=>res(r.result.split(',')[1]);
+    r.onerror=()=>rej(new Error('read'));
+    r.readAsDataURL(blob);
+  });
+  const ext=(blob.type==='image/jpeg'&&isImg)?file.name.replace(/\.[^.]+$/,'')+'.jpg':file.name;
+  return {name:ext,type:blob.type||'application/octet-stream',size:blob.size,data:b64};
+}
+function waText(f,uniName,docsList){
+  return [
+    '📋 YENİ BAŞVURU — Al Azim','━━━━━━━━━━━━━━',
     '🏛 Üniversite: '+uniName,
-    '🎓 Program: '+f('f_degree')+' / '+f('f_lang'),
+    '🎓 Program: '+f('f_degree')+' / '+f('f_lang')+' / '+f('f_sem'),
     '1️⃣ Tercih: '+f('f_p1'),
     f('f_p2')?'2️⃣ Tercih: '+f('f_p2'):null,
     f('f_p3')?'3️⃣ Tercih: '+f('f_p3'):null,
@@ -424,22 +449,71 @@ document.getElementById('apForm').addEventListener('submit',async e=>{
     '👤 '+f('f_name')+' '+f('f_surname'),
     '👨 Baba: '+f('f_father')+'  👩 Anne: '+f('f_mother'),
     '🎂 Doğum: '+f('f_dob')+(f('f_gender')?'  ⚧ '+f('f_gender'):''),
-    '📧 '+f('f_email'),
-    '📱 '+f('f_phone'),
+    '📧 '+f('f_email'),'📱 '+f('f_phone'),
     '🌍 Vatandaşlık: '+f('f_nat')+' / İkamet: '+f('f_res'),
-    f('f_pass')?'🛂 Pasaport No: '+f('f_pass'):null,
-    '━━━━━━━━━━━━━━',
+    '🛂 Pasaport No: '+f('f_pass'),'━━━━━━━━━━━━━━',
     '🏫 '+f('f_grad')+' — '+f('f_school'),
     f('f_gpa')?'📊 Not: '+f('f_gpa'):null,
     '📎 Belgeler: '+docsList,
     f('f_msg')?'💬 Not: '+f('f_msg'):null
-  ].filter(Boolean);
-  const text=lines.join('\n');
+  ].filter(Boolean).join('\n');
+}
+document.getElementById('apForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const form=document.getElementById('apForm');
+  if(!form.checkValidity()){form.reportValidity();return;}
+  const f=id=>document.getElementById(id).value.trim();
+  const btn=document.getElementById('apBtn');
+  const uniName=uniSel.value==='__any__'?'(danışman önerisi istiyor)':(UNIS.find(x=>x[2]===uniSel.value)||['—'])[0];
+  btn.disabled=true; btn.style.opacity=.6;
 
-  if(API_ENDPOINT){
-    /* future e-mail path: multipart POST with files → serverless → Resend */
+  /* collect + compress files */
+  const files=[]; let total=0;
+  for(const inp of document.querySelectorAll('.upbox input[type=file]')){
+    for(const file of inp.files){
+      try{
+        const p=await fileToPayload(file);
+        p.doc=inp.dataset.doc; total+=p.size; files.push(p);
+      }catch(err){}
+    }
+  }
+  if(total>3.2*1024*1024){
+    alert(D().a_toobig); btn.disabled=false; btn.style.opacity=1; return;
+  }
+  const payload={
+    university:uniName, universitySlug:uniSel.value,
+    degree:f('f_degree'), language:f('f_lang'), semester:f('f_sem'),
+    p1:f('f_p1'), p2:f('f_p2'), p3:f('f_p3'),
+    name:f('f_name'), surname:f('f_surname'),
+    father:f('f_father'), mother:f('f_mother'),
+    dob:f('f_dob'), gender:f('f_gender'),
+    email:f('f_email'), phone:f('f_phone'),
+    nationality:f('f_nat'), residence:f('f_res'), passport:f('f_pass'),
+    grad:f('f_grad'), school:f('f_school'), gpa:f('f_gpa'),
+    notes:f('f_msg'), lang:lang(), files
+  };
+  let appNo='', sent=false;
+  try{
+    const r=await fetch('/api/basvuru',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    if(r.ok){const j=await r.json(); sent=!!j.ok; appNo=j.appNumber||'';}
+  }catch(err){}
+  if(!sent){
+    /* fallback: WhatsApp with structured text */
+    const docsList=files.map(x=>x.name).join(', ')||'—';
+    window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(waText(f,uniName,docsList)),'_blank');
+    const okd=document.querySelector('#apOk p');
+    okd.textContent=(window.PAGE_I18N[lang()]||PAGE_I18N.en).a_okd;
   }else{
-    window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(text),'_blank');
+    const okd=document.querySelector('#apOk p');
+    const okTexts={en:'Your application has been submitted successfully. Our advisor will contact you within 24 hours.',
+      tr:'Başvurunuz başarıyla gönderildi. Danışmanımız 24 saat içinde sizinle iletişime geçecek.',
+      tk:'Ýüz tutmaňyz üstünlikli iberildi. Maslahatçymyz 24 sagadyň içinde siziň bilen habarlaşar.',
+      ru:'Ваша заявка успешно отправлена. Наш консультант свяжется с вами в течение 24 часов.'};
+    okd.textContent=okTexts[lang()]||okTexts.en;
+    if(appNo){
+      const h3=document.querySelector('#apOk h3');
+      h3.insertAdjacentHTML('afterend','<p style="color:var(--gold);font-weight:700;font-size:17px;margin-bottom:8px">'+(D().a_appno||'Application No')+': '+appNo+'</p>');
+    }
   }
   form.style.display='none';
   document.getElementById('apOk').classList.add('show');

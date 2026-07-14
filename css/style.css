@@ -441,3 +441,35 @@ footer{background:var(--bg2);border-top:1px solid var(--line);padding:72px 0 30p
   .apcard{padding:30px 20px;border-radius:16px}
   .apform .row,.apform .row3,.upgrid{grid-template-columns:1fr}
 }
+
+
+/* ===== featured university spotlight ===== */
+.featuni{max-width:1240px;margin:0 auto;padding:0 28px}
+.fu-card{position:relative;display:block;border-radius:26px;overflow:hidden;border:1px solid var(--line2);min-height:clamp(360px,46vh,470px);transition:.45s;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.fu-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 40px 100px rgba(212,175,106,.16)}
+.fu-card img.fu-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:1.2s ease}
+.fu-card:hover img.fu-bg{transform:scale(1.045)}
+.fu-shade{position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,7,9,.92) 0%,rgba(7,7,9,.72) 34%,rgba(7,7,9,.18) 68%,rgba(7,7,9,.3) 100%)}
+.fu-in{position:relative;z-index:2;height:100%;min-height:inherit;display:flex;align-items:center;padding:44px 58px}
+.fu-left{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.fu-logo{width:128px;height:128px;border-radius:50%;background:#fff;border:3px solid var(--gold);box-shadow:0 18px 50px rgba(0,0,0,.6);display:grid;place-items:center;overflow:hidden;flex:none}
+.fu-logo img{width:100%;height:100%;object-fit:contain;padding:12px}
+.fu-logo .fu-mono{font-family:'Playfair Display';font-weight:700;font-size:44px;color:#1a1306}
+.fu-txt .fu-tag{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line2);border-radius:30px;padding:7px 15px 6px;background:rgba(7,7,9,.55);margin-bottom:14px}
+.fu-txt h3{font-family:'Playfair Display';font-size:clamp(28px,3.6vw,46px);line-height:1.1;text-shadow:0 4px 30px rgba(0,0,0,.7)}
+.fu-txt .fu-meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:14px;color:#e2dccf;font-size:14.5px;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.fu-txt .fu-meta b{color:var(--gold-b)}
+.fu-cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+.fu-arrow{position:absolute;right:46px;bottom:40px;z-index:2;width:58px;height:58px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;background:rgba(7,7,9,.5);backdrop-filter:blur(6px);transition:.35s}
+.fu-card:hover .fu-arrow{background:var(--grad);border-color:transparent}
+.fu-arrow svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.8;transition:.35s}
+.fu-card:hover .fu-arrow svg{stroke:#1a1306;transform:translate(2px,-2px)}
+@media(max-width:760px){
+  .featuni{padding:0 18px}
+  .fu-card{border-radius:18px;min-height:0}
+  .fu-in{padding:30px 22px 78px}
+  .fu-logo{width:88px;height:88px}
+  .fu-logo .fu-mono{font-size:30px}
+  .fu-shade{background:linear-gradient(180deg,rgba(7,7,9,.3) 0%,rgba(7,7,9,.62) 45%,rgba(7,7,9,.92) 100%)}
+  .fu-arrow{right:20px;bottom:20px;width:48px;height:48px}
+}
