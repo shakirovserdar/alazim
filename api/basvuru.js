@@ -44,10 +44,10 @@ function emailHtml(p){
 async function sendMail(p){
   const key=process.env.RESEND_API_KEY;
   if(!key) return {ok:false,skip:true};
-  const to=process.env.BASVURU_EMAIL||'alazimdanismanlik@gmail.com';
+  const to=(process.env.BASVURU_EMAIL||'alazimdanismanlik@gmail.com').split(',').map(s=>s.trim()).filter(Boolean);
   const from=process.env.RESEND_FROM||'Al Azim Basvuru <onboarding@resend.dev>';
   const body={
-    from, to:[to],
+    from, to,
     reply_to: p.email||undefined,
     subject:`📋 Başvuru: ${p.name} ${p.surname} — ${p.university} (${p.p1||p.degree})`,
     html: emailHtml(p),
