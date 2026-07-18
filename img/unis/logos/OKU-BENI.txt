@@ -1,0 +1,15 @@
+LOGO SISTEMI — img/unis/logos/
+================================
+Bu klasore universite logolarini PNG olarak at (seffaf arka plan ideal, min 256x256).
+Dosya adi = universities.html'deki slug + .png
+
+Ana sayfa one cikan kart:   medipol.png
+SEO sayfalari hero rozeti:  kadirhas.png, bau.png, ozyegin.png, istinye.png,
+                            gelisim.png, bilgi.png, bezmialem.png, acibadem.png
+
+Logo dosyasi yoksa sistem otomatik olarak universitenin bas harflerini gosterir
+(hicbir sey bozulmaz). Logoyu attigin an kendiliginden gorunur, kod degisikligi gerekmez.
+
+Logolari nereden alirsin: her universitenin kendi sitesinde "Kurumsal Kimlik /
+Logo" sayfasi vardir, oradan resmi PNG'yi indir. Wikipedia'daki SVG'ler de olur
+(PNG'ye cevir). Kalitesiz JPG kullanma, beyaz kare gorunur.
