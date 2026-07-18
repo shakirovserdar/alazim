@@ -389,19 +389,27 @@ function fillUniSelect(){
 }
 fillUniSelect();
 function initials(name){return name.replace(/University|Üniversitesi|\(.*?\)/gi,'').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('').toUpperCase();}
+function setLogo(el,src,fb){
+  el.textContent='';
+  const im=document.createElement('img');
+  im.src=src; im.alt='';
+  im.style.cssText='width:100%;height:100%;object-fit:contain;padding:10px;border-radius:50%';
+  im.onerror=function(){el.textContent=fb;};
+  el.appendChild(im);
+}
 function setHero(slug){
   const u=UNIS.find(x=>x[2]===slug);
   const bg=document.getElementById('apBg'), logo=document.getElementById('apLogo'), title=document.getElementById('apUniTitle');
   if(u){
     bg.src='img/unis/'+u[2]+'.jpg';
     bg.onerror=function(){this.onerror=null;this.src='img/covers/city-'+u[1]+'.svg'};
-    logo.textContent=initials(u[0]);
+    setLogo(logo,'img/unis/logos/'+u[2]+'.png',initials(u[0]));
     const parts=u[0].split(' ');
     title.removeAttribute('data-i18n');
     title.innerHTML=parts.slice(0,-1).join(' ')+' <span class="gold">'+parts.slice(-1)+'</span>';
   }else{
     bg.src='img/home/graduation.jpg'; bg.onerror=function(){this.onerror=null;this.src='img/covers/city-ist-eu.svg'};
-    logo.textContent='AZ';
+    setLogo(logo,'img/logo.png','AZ');
   }
 }
 if(uSlug&&UNIS.some(x=>x[2]===uSlug)){uniSel.value=uSlug;setHero(uSlug);}else{setHero(null);}
