@@ -1,15 +1,26 @@
 LOGO SISTEMI — img/unis/logos/
 ================================
-Bu klasore universite logolarini PNG olarak at (seffaf arka plan ideal, min 256x256).
-Dosya adi = universities.html'deki slug + .png
+Bu klasore universite logolarini PNG olarak at.
+Dosya adi = slug + .png  (kucuk harf, tam eslesmeli)
 
-Ana sayfa one cikan kart:   medipol.png
-SEO sayfalari hero rozeti:  kadirhas.png, bau.png, ozyegin.png, istinye.png,
-                            gelisim.png, bilgi.png, bezmialem.png, acibadem.png
+Logo gorunen yerler (dosyayi attigin an otomatik cikar, kod degisikligi gerekmez):
+- Ana sayfa: one cikan Medipol karti + 8 rehber karti
+- Universiteler sayfasi: her kartin fotografinin sol alt kosesinde rozet
+- Basvuru sayfasi: secilen universitenin logosu
+- 9 SEO sayfasinin hero'su
+Logo yoksa: rozet gizlenir ya da bas harfler cikar — hicbir sey bozulmaz.
 
-Logo dosyasi yoksa sistem otomatik olarak universitenin bas harflerini gosterir
-(hicbir sey bozulmaz). Logoyu attigin an kendiliginden gorunur, kod degisikligi gerekmez.
+TUM SLUG LISTESI (37 uni):
+koc sabanci bilkent acibadem kadirhas bau medipol biruni aydin altinbas
+istinye ozyegin yeditepe uskudar halic fenerbahce dogus nisantasi bilgi
+gelisim gedik kultur galata yeniyuzyil kent fsm bezmialem beykoz pirireis
+maltepe mef isik atilim yasar tinaztepe antalyabilim mudanya
 
-Logolari nereden alirsin: her universitenin kendi sitesinde "Kurumsal Kimlik /
-Logo" sayfasi vardir, oradan resmi PNG'yi indir. Wikipedia'daki SVG'ler de olur
-(PNG'ye cevir). Kalitesiz JPG kullanma, beyaz kare gorunur.
+Ornek: Koc Universitesi logosu -> koc.png, Bahcesehir -> bau.png
+
+ONCELIK SIRASI (SEO sayfasi olanlar):
+medipol kadirhas bau ozyegin istinye gelisim bilgi bezmialem acibadem
+
+Nereden indir: universitenin sitesinde "Kurumsal Kimlik / Logo" sayfasi,
+ya da Wikipedia'daki logo (PNG'ye cevir). Seffaf veya beyaz arka planli,
+min 256x256 kare PNG ideal. Yuvarlak amblemli logolar en iyi gorunur.
