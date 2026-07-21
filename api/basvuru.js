@@ -1,12 +1,16 @@
 /* Al Azim — application handler
    1) e-mails the application (with documents) via Resend
    2) auto-creates the application in AgentsCRM agent portal
+   3) saves student + application into Al Azim Portal (Supabase)
+   4) sends the student a 4-language confirmation e-mail
    Env vars (Vercel → Settings → Environment Variables):
      RESEND_API_KEY      — from resend.com (required for e-mail)
      BASVURU_EMAIL       — where applications arrive (default below)
      RESEND_FROM         — verified sender, e.g. "Al Azim <basvuru@alazimdanismanlik.com>"
      AGENTPORTAL_TOKEN   — AgentsCRM API token (optional; skips portal if missing)
      AGENTPORTAL_URL     — default https://agentportal-apply.com
+     SB_URL              — https://gydvyqtynsetictrucfp.supabase.co
+     SB_SECRET           — Supabase secret key (sb_secret_...)
 */
 
 const LEVEL_MAP = { 'Lisans':'bachelor', 'Önlisans':'diploma', 'Yüksek Lisans':'master', 'Doktora':'phd' };
@@ -36,6 +40,7 @@ function emailHtml(p){
     ${sec('BELGELER')}
     ${row('Ekler',(p.files&&p.files.length)?p.files.map(f=>`${DOC_LABEL[f.doc]||f.doc}: ${f.name}`).join(' · '):'Belge yüklenmedi — WhatsApp/e-posta ile gelecek')}
     ${row('Portal',p._portalResult||'—')}
+    ${row('Al Azim Portal',p._sbResult||'—')}
   </table>
   <div style="background:#f1ece0;padding:12px 26px;color:#8a8375;font-size:12px">alazimdanismanlik.com başvuru formu · dil: ${esc(p.lang)}</div>
 </div>`;
@@ -59,6 +64,104 @@ async function sendMail(p){
     body:JSON.stringify(body)
   });
   return {ok:r.ok, status:r.status, detail:r.ok?null:await r.text().catch(()=>null)};
+}
+
+/* ---------- student confirmation e-mail (4 languages) ---------- */
+const STUDENT_TXT = {
+  tr: { subj:u=>`Başvurunuz alındı — ${u}`, hello:n=>`Sayın ${n},`,
+        body:u=>`Al Azim Danışmanlık aracılığıyla <b>${u}</b> başvurunuz başarıyla alınmıştır. 🎉`,
+        next:'Başvurunuz değerlendirme sürecindedir. Kabul, depozito ve kayıt aşamalarındaki tüm gelişmeler bu e-posta adresine bildirilecektir.',
+        foot:'Sorularınız için bize her zaman ulaşabilirsiniz.', team:'Al Azim Danışmanlık Ekibi' },
+  en: { subj:u=>`Your application has been received — ${u}`, hello:n=>`Dear ${n},`,
+        body:u=>`Your application to <b>${u}</b> through Al Azim Consulting has been successfully received. 🎉`,
+        next:'Your application is now being processed. All updates — acceptance, deposit and enrollment — will be sent to this e-mail address.',
+        foot:'Feel free to contact us anytime.', team:'Al Azim Consulting Team' },
+  ru: { subj:u=>`Ваша заявка получена — ${u}`, hello:n=>`Уважаемый(ая) ${n},`,
+        body:u=>`Ваша заявка в <b>${u}</b> через Al Azim Consulting успешно получена. 🎉`,
+        next:'Ваша заявка находится в обработке. Все обновления — зачисление, депозит и регистрация — будут отправлены на этот адрес.',
+        foot:'Вы всегда можете связаться с нами.', team:'Команда Al Azim Consulting' },
+  tk: { subj:u=>`Arzaňyz kabul edildi — ${u}`, hello:n=>`Hormatly ${n},`,
+        body:u=>`Al Azim Consulting arkaly <b>${u}</b> üçin arzaňyz üstünlikli kabul edildi. 🎉`,
+        next:'Arzaňyz seredilýär. Kabul, depozit we hasaba alyş baradaky ähli täzelikler şu e-poçta salgysyna iberiler.',
+        foot:'Islendik wagt biz bilen habarlaşyp bilersiňiz.', team:'Al Azim Consulting topary' }
+};
+
+async function sendStudentMail(p){
+  const key=process.env.RESEND_API_KEY;
+  if(!key||!p.email) return {ok:false,skip:true};
+  const L=STUDENT_TXT[p.lang]||STUDENT_TXT.tk;
+  const name=`${p.name} ${p.surname}`.trim();
+  const html=`
+  <div style="background:#0e1526;padding:32px 16px;font-family:Arial,sans-serif">
+    <div style="max-width:520px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden">
+      <div style="background:linear-gradient(135deg,#d4af37,#b8962e);padding:22px;text-align:center">
+        <div style="font-size:20px;font-weight:800;color:#0e1526;letter-spacing:.5px">AL AZIM</div>
+        <div style="font-size:12px;color:#0e1526;opacity:.75">alazimdanismanlik.com</div>
+      </div>
+      <div style="padding:28px 26px;color:#1c2333;font-size:15px;line-height:1.7">
+        <p style="margin:0 0 12px"><b>${esc(L.hello(name))}</b></p>
+        <p style="margin:0 0 16px">${L.body(esc(p.university))}</p>
+        <div style="background:#f6f1df;border-left:4px solid #d4af37;padding:14px 16px;border-radius:8px;font-size:14px">
+          ${L.next}
+        </div>
+        <p style="margin:18px 0 0;color:#5a6478;font-size:13.5px">${L.foot}</p>
+        <p style="margin:22px 0 0;font-weight:700">${L.team}</p>
+      </div>
+      <div style="background:#f2f4f9;padding:14px;text-align:center;color:#8a93a8;font-size:12px">
+        Şirinevler Mah. Meriç Sok. No:20, İstanbul · +90 534 689 84 93
+      </div>
+    </div>
+  </div>`;
+  const r=await fetch('https://api.resend.com/emails',{
+    method:'POST',
+    headers:{'Authorization':`Bearer ${key}`,'Content-Type':'application/json'},
+    body:JSON.stringify({
+      from:process.env.RESEND_FROM||'Al Azim <onboarding@resend.dev>',
+      to:[p.email],
+      subject:L.subj(p.university),
+      html
+    })
+  });
+  return {ok:r.ok,status:r.status};
+}
+
+/* ---------- Al Azim Portal (Supabase) ---------- */
+async function sendSupabase(p){
+  const url=process.env.SB_URL, key=process.env.SB_SECRET;
+  if(!url||!key) return {ok:false,skip:true};
+  const H={'apikey':key,'Authorization':`Bearer ${key}`,'Content-Type':'application/json','Prefer':'return=representation'};
+
+  /* 1) student */
+  const sRes=await fetch(url+'/rest/v1/students',{
+    method:'POST',headers:H,
+    body:JSON.stringify({
+      first_name:p.name, last_name:p.surname,
+      father_name:p.father||'', mother_name:p.mother||'',
+      birth_date:p.dob||null, gender:p.gender||'',
+      email:p.email||'', phone:p.phone||'',
+      passport_no:p.passport||'', citizenship:p.nationality||'',
+      residence:p.residence||'', lang:['en','tr','tk','ru'].includes(p.lang)?p.lang:'tk'
+    })
+  });
+  if(!sRes.ok) return {ok:false,detail:'student: '+await sRes.text().catch(()=>sRes.status)};
+  const student=(await sRes.json())[0];
+
+  /* 2) application */
+  const aRes=await fetch(url+'/rest/v1/applications',{
+    method:'POST',headers:H,
+    body:JSON.stringify({
+      student_id:student.id, university:p.university||'',
+      program1:p.p1||'', program2:p.p2||'', program3:p.p3||'',
+      level:p.degree||'', edu_lang:p.language||'', semester:p.semester||'',
+      note:[p.grad?`Eğitim: ${p.grad} ${p.school||''} ${p.gpa?('Not:'+p.gpa):''}`:null,
+            p.notes||null,
+            (p.files&&p.files.length)?('Belgeler mailde: '+p.files.map(f=>f.name).join(', ')):null]
+           .filter(Boolean).join(' | ')
+    })
+  });
+  if(!aRes.ok) return {ok:false,detail:'application: '+await aRes.text().catch(()=>aRes.status)};
+  const app=(await aRes.json())[0];
+  return {ok:true, id:app.id};
 }
 
 async function sendPortal(p){
@@ -131,18 +234,29 @@ module.exports = async (req,res)=>{
   const total=(p.files||[]).reduce((a,f)=>a+(f.data?f.data.length:0),0);
   if(total>4.6*1024*1024){res.statusCode=413;return res.end(JSON.stringify({ok:false,error:'files too large'}));}
 
-  /* 1) portal first (to include APP number in the e-mail) */
+  /* 1) AgentsCRM first (to include APP number in the e-mail) */
   let portal={ok:false,skip:true};
   try{ portal=await sendPortal(p); }catch(e){ portal={ok:false,detail:String(e)}; }
   p._portalResult = portal.skip ? 'Portala gönderilmedi (manuel girilecek)'
     : portal.ok ? ('AgentsCRM ✓ '+(portal.appNumber||'')) : ('AgentsCRM HATA: '+(portal.detail||portal.status));
 
-  /* 2) e-mail */
+  /* 2) Al Azim Portal (Supabase) */
+  let supa={ok:false,skip:true};
+  try{ supa=await sendSupabase(p); }catch(e){ supa={ok:false,detail:String(e)}; }
+  p._sbResult = supa.skip ? 'Kapalı (env eksik)'
+    : supa.ok ? 'Portala kaydedildi ✓' : ('HATA: '+(supa.detail||''));
+
+  /* 3) office e-mail */
   let mail={ok:false,skip:true};
   try{ mail=await sendMail(p); }catch(e){ mail={ok:false,detail:String(e)}; }
 
-  const ok = mail.ok || portal.ok;
+  /* 4) student confirmation e-mail (best effort, never blocks) */
+  let smail={ok:false,skip:true};
+  try{ smail=await sendStudentMail(p); }catch(e){ smail={ok:false}; }
+
+  const ok = mail.ok || portal.ok || supa.ok;
   res.statusCode = ok?200:502;
   res.setHeader('Content-Type','application/json');
-  res.end(JSON.stringify({ok, appNumber:portal.appNumber||'', mailed:!!mail.ok, portal:!!portal.ok}));
+  res.end(JSON.stringify({ok, appNumber:portal.appNumber||'', mailed:!!mail.ok,
+                          portal:!!portal.ok, alazimPortal:!!supa.ok, studentMailed:!!smail.ok}));
 };
